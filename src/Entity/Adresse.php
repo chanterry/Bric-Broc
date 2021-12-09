@@ -20,7 +20,7 @@ class Adresse
     /**
      * @ORM\Column(type="integer")
      */
-    private $N°;
+    private $Numero;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -42,14 +42,14 @@ class Adresse
         return $this->id;
     }
 
-    public function getN°(): ?int
+    public function getNumero(): ?int
     {
-        return $this->N°;
+        return $this->Numero;
     }
 
-    public function setN°(int $N°): self
+    public function setNumero(int $Numero): self
     {
-        $this->N° = $N°;
+        $this->Numero = $Numero;
 
         return $this;
     }
