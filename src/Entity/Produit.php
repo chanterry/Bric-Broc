@@ -40,7 +40,7 @@ class Produit
     private $Photo;
 
     /**
-     * @ORM\ManyToMany(targetEntity=categorie::class, inversedBy="produits")
+     * @ORM\ManyToMany(targetEntity=Categorie::class, inversedBy="produits")
      */
     private $categorie;
 
