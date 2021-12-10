@@ -37,6 +37,12 @@ class Utilisateur
      */
     private $Username;
 
+    /**
+     * @ORM\OneToOne(targetEntity=adresse::class, inversedBy="utilisateur", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $adresse;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +92,18 @@ class Utilisateur
     public function setUsername(string $Username): self
     {
         $this->Username = $Username;
+
+        return $this;
+    }
+
+    public function getAdresse(): ?adresse
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(adresse $adresse): self
+    {
+        $this->adresse = $adresse;
 
         return $this;
     }

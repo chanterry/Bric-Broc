@@ -37,6 +37,11 @@ class Adresse
      */
     private $CodePostal;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Utilisateur::class, mappedBy="adresse", cascade={"persist", "remove"})
+     */
+    private $utilisateur;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,23 @@ class Adresse
     public function setCodePostal(int $CodePostal): self
     {
         $this->CodePostal = $CodePostal;
+
+        return $this;
+    }
+
+    public function getUtilisateur(): ?Utilisateur
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(Utilisateur $utilisateur): self
+    {
+        // set the owning side of the relation if necessary
+        if ($utilisateur->getAdresse() !== $this) {
+            $utilisateur->setAdresse($this);
+        }
+
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }
