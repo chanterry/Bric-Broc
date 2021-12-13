@@ -15,8 +15,11 @@
 
    <h3>{{produit.nom}}</h3>
     <p>{{produit.descriptif}}</p>
-    <a href="{{path('produitdetails', {'id':produit.id})}}">Voir le details du produit</a>
+    <a href="{{path('produitdetails', {'id':produit.id})}}">Voir le details du produit</a></br>
+    <button>Ajouter au panier</button>
     {% endfor %}
+
+    
    
 </div>
 {% endblock %}
