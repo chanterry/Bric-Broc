@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomepageController!{% endblock %}
+{% block title %}Hello ProduitController!{% endblock %}
 
 {% block body %}
 <style>
@@ -9,9 +9,14 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Page details ✅</h1>
 
-    <a href="{{path('produit')}}">Categorie Produit</a>
+    <h2>{{details.nom}}</h2>
+    <h3>Descriptif</h3>
+    <p>{{details.descriptif}}</h3>
+
+
+  
 
    
 </div>
