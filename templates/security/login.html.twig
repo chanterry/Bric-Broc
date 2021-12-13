@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Page de connexion{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -14,11 +14,14 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+
+    <h2>Déjà Client</h2>
+    <p>Connectez-vous avec vos identifiants</p>
+
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Votre email" autocomplete="email" required autofocus>
+    <br><br>
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password" required>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
@@ -34,9 +37,20 @@
             </label>
         </div>
     #}
+    <br>
+    <p>Vous avez oublié votre mot de passe</p>
 
     <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
+        Connectez-vous
     </button>
 </form>
+
+        <div>
+            <h2>Nouveau client</h2>
+
+            <p>Créez votre compte pour vous connecter et commandez</p>
+               
+            <a href="{{ path('register')}}">Créer votre compte</a>
+   
+        </div>
 {% endblock %}
