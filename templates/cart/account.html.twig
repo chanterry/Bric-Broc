@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Panier - Mon Compte{% endblock %}
+{% block title %}Panier - Mes Coordonnées{% endblock %}
 
 {% block body %}
 <style>
@@ -15,10 +15,9 @@
         {{ form_row(CartForm.firstname) }}
         {{ form_row(CartForm.lastname) }}
         {{ form_row(CartForm.email) }}
-
-        <a href="">Continuer</a>
-
     {{ form_end(CartForm) }}
+    
+    <a href="{{path('cart_address')}}">Continuer</a>
 </div>
 
 <div class="example-wrapper">
