@@ -14,11 +14,14 @@
     <h2>{{details.nom}}</h2>
     <h3>Descriptif</h3>
     <p>{{details.descriptif}}</p></br>
-    <button>Ajouter au panier</button>
+    <p>{{details.marque}}</p>
+    <button data-name="{{details.nom}}" data-content="{{details.descriptif}}" data-img="{{details.photo}}" class="btn-ajouter">Ajouter au panier</button>
 
 
   
 
    
 </div>
+
 {% endblock %}
+

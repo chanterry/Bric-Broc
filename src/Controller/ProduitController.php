@@ -32,4 +32,6 @@ class ProduitController extends AbstractController
             'details' => $repository->find($id),
         ]);
     }
+
+    
 }
