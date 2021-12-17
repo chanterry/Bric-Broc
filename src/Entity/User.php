@@ -47,6 +47,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $lastname;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $phonenumber;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -156,6 +161,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    public function getPhonenumber(): ?int
+    {
+        return $this->phonenumber;
+    }
+
+    public function setPhonenumber(int $phonenumber): self
+    {
+        $this->phonenumber = $phonenumber;
 
         return $this;
     }
