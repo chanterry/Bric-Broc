@@ -48,3 +48,34 @@ function recupererPanier() {
     contenu.innerHTML = contenuPanier;
   }
 }
+
+//function supprimerArticlePanier(event){
+//  let data = window.localStorage.getItem(keyLocalStorage);
+//  data=JSON.parse(data);
+
+//  let id = event.currentTarget.dataset.
+//}
+
+
+const bricbrocBox = "bricbrocBox";
+let typeBox = document.querySelectorAll(".box");
+
+for (box of typeBox) {
+  if (box) {
+    box.addEventListener('click', chooseBox);
+  }
+}
+
+function chooseBox(event) {
+  let box = this.dataset.value;
+  localStorage.setItem(bricbrocBox, box);
+}
+
+
+
+let btnCommander = document.getElementById("commander");
+btnCommander.addEventListener('click', commander);
+
+function commander() {
+
+}
