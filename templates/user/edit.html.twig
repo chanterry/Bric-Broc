@@ -9,23 +9,28 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Gérer votre compte</h1>
+Gérer votre compte 
 </div>
 
 <div class="example-wrapper">
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.firstname) }}
-        {{ form_row(registrationForm.lastname) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
+    {{ form_start(EditProfile) }}
+        {{ form_row(EditProfile.firstname) }}
+        {{ form_row(EditProfile.lastname) }}
+        {{ form_row(EditProfile.telephone) }}
+        {{ form_row(EditProfile.email) }}
+        {{ form_row(EditProfile.password, {
             label: 'Mot de passe'
         }) }}
-        
-    {{ form_end(registrationForm) }}
 
+        {{ form_row(EditProfile.Numero) }}
+        {{ form_row(EditProfile.Rue) }}
+        {{ form_row(EditProfile.Ville) }}
+        {{ form_row(EditProfile.Codepostal) }}
+
+        <button type="submit" class="btn">Je modifie</button>
+    {{ form_end(EditProfile) }}
 
 </div>
 
-</div>
 {% endblock %}

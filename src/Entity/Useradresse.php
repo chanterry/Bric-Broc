@@ -1,63 +1,26 @@
 <?php
-
 namespace App\Entity;
 
 use App\Repository\UserRepository;
-use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AdresseRepository;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-/**
- * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
- */
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+
+class Useradresse
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $id;
-
-    /**
-     * @ORM\Column(type="string", length=180, unique=true)
-     */
     private $email;
-
-    /**
-     * @ORM\Column(type="json")
-     */
-    private $roles = [];
-
-    /**
-     * @var string The hashed password
-     * @ORM\Column(type="string")
-     */
     private $password;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $firstname;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $lastname;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
     private $telephone;
 
-
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    private $Numero;
+    private $Rue;
+    private $Ville;
+    private $CodePostal;
+    private $user_id;
 
     public function getEmail(): ?string
     {
@@ -87,25 +50,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getUsername(): string
     {
         return (string) $this->email;
-    }
-
-    /**
-     * @see UserInterface
-     */
-    public function getRoles(): array
-    {
-        $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
-
-        return array_unique($roles);
-    }
-
-    public function setRoles(array $roles): self
-    {
-        $this->roles = $roles;
-
-        return $this;
     }
 
     /**
@@ -180,4 +124,68 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getNumero(): ?int
+    {
+        return $this->Numero;
+    }
+
+    public function setNumero(int $Numero): self
+    {
+        $this->Numero = $Numero;
+
+        return $this;
+    }
+
+    public function getRue(): ?string
+    {
+        return $this->Rue;
+    }
+
+    public function setRue(string $Rue): self
+    {
+        $this->Rue = $Rue;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->Ville;
+    }
+
+    public function setVille(string $Ville): self
+    {
+        $this->Ville = $Ville;
+
+        return $this;
+    }
+
+    public function getCodePostal(): ?int
+    {
+        return $this->CodePostal;
+    }
+
+    public function setCodePostal(int $CodePostal): self
+    {
+        $this->CodePostal = $CodePostal;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
 }

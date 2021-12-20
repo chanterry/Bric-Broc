@@ -6,11 +6,11 @@ use App\Entity\User;
 use App\Entity\Adresse;
 use App\Form\CartFormType;
 use App\Form\CartAddressType;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-// use Symfony\Component\Mime\Address;
 
 class CartController extends AbstractController
 {
@@ -27,15 +27,20 @@ class CartController extends AbstractController
     /**
      * @Route("/account", name="account")
      */
-    public function cart_account(Request $request): Response
+    public function cart_account(Request $request, Security $security): Response
     {
-        $user = new User();
-        $form = $this->createForm(CartFormType::class, $user);
+        $user_coordonnes = new User();
+
+        $user_coordonnes->setFirstname($security->getUser()->getFirstname());
+        $user_coordonnes->setLastname($security->getUser()->getLastname());
+        $user_coordonnes->setEmail($security->getUser()->getEmail());
+
+        $form = $this->createForm(CartFormType::class, $user_coordonnes);
         $form ->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
             $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
+            $em->persist($user_coordonnes);
             $em->flush();
         }
         

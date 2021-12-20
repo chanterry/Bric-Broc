@@ -2,13 +2,13 @@
 
 namespace App\Form;
 
-use App\Entity\User;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use App\Entity\Useradresse;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CartFormType extends AbstractType
+class EditProfileType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -19,11 +19,16 @@ class CartFormType extends AbstractType
             ->add('lastname', TextType::class, [
                 'label' => 'Nom',
             ])
-            ->add('email', TextType::class, [
-                'label' => 'Email',
-            ])
+            ->add('email')
+            ->add('password')
             ->add('telephone', TextType::class, [
-                'label' => 'Telephone',
+                'label' => 'Téléphone',
+            ])
+            ->add('Numero',)
+            ->add('Rue')
+            ->add('Ville')
+            ->add('Codepostal', TextType::class, [
+                'label' => 'Code Postal',
             ])
         ;
     }
@@ -31,7 +36,7 @@ class CartFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => User::class,
+            'data_class' => Useradresse::class,
         ]);
     }
 }
