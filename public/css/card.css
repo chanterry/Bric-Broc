@@ -1,0 +1,346 @@
+/*.html
+{
+font-size: 62.5%;
+} */
+
+/* couleur primaire: Jaune 
+#EB9F4A
+rgb(235,159,74)
+couleurs secondaires: Vert, Orange, Rouge 
+#84B0A0
+rgb(132,176,160)
+#DA7F57
+rgb(218,127,87)
+#C95F63
+rgb(201,95,99)
+couleurs de fond: Beige, Blanc 
+#F1E6E0
+rgb(241,230,224)
+#FFFEFD
+rgb(255,254,253)
+couleur texte: Noir
+#0A0D22
+rgb(10,13,34) */
+
+html
+{
+    color: #0A0D22;
+}
+
+/* -----------------------
+CSS pour card_header 
+------------------------*/
+.card-header
+{
+    margin-top: 44px;
+    margin-bottom: 44px;
+    padding-top: 44px;
+    background-color: rgb(255,254,253);
+}
+
+.logo-header
+{
+    margin-bottom: 88px;
+}
+
+.tag-action
+{
+    display: block;
+    color: rgb(255,254,253);
+    font-size: 2.8rem;
+    font-weight: 600;
+    background-color: rgb(132,176,160);
+    padding: 8px 24px 8px 24px;
+    border-radius: 10px;
+    transform: rotate(-8deg);
+}
+
+.tag-line
+{
+    margin-top: 88px;
+    color: rgb(10,13,34);
+    font-size: 2.2rem;
+    font-weight: 700;
+
+}
+
+.btn-primary
+{
+    color: rgb(241,230,224);
+    background-color: rgb(235,159,74);
+    border-color: rgb(235,159,74);
+    border-radius:0.8rem
+}
+
+.btn-primary:hover
+{
+    background-color: rgb(201,95,99);
+    border-color: rgb(201,95,99);
+}
+
+
+
+
+/* -----------------------
+CSS pour card_box 
+------------------------*/
+
+.card-box h2
+{
+    padding-top: 44px;
+    padding-bottom: 22px;
+}
+
+.img-box
+{
+    border-radius: 16px 16px 0px 0px;
+    width: 100%;
+}
+
+.box-description
+{
+    background: #84B0A0;
+    padding-left: 22px;
+    padding-right: 22px;
+    box-shadow: 0px 2px 4px rgba(7, 4, 146, 0.1), 0px 24px 60px rgba(6, 47, 125, 0.05), 0px 12px 24px rgba(27, 59, 119, 0.05);
+    border-radius: 0px 0px 16px 16px;
+}
+
+.card-box h3
+{
+    padding-top: 22px;
+}
+
+.card-box .price
+{
+    margin-bottom: 22px;
+}
+
+.card-box .price strong {
+    font-size: 2rem;
+}
+
+.btn
+{
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+/* -----------------------
+CSS pour card-vignette 
+------------------------*/
+/*.card-vignette-visuel
+{
+height: 100%;
+border-radius: 16px;
+-webkit-box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1); 
+box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1);
+}
+
+.card-vignette-visuel img
+{
+width: 100%;
+border-radius: 16px;
+}
+
+.card-vignette-body
+{
+position: relative;
+}
+
+.card-vignette-body h3
+{
+text-align: center;
+}
+.card-vignette-body h4
+{
+text-align: center;
+} 
+.card-vignette-body .bt-plus
+{
+position: absolute;
+top:10px;
+right: 0;
+} */
+
+.card-vignette-visuel
+{
+height: 100%;
+border-radius: 16px;
+-webkit-box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1); 
+box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1);
+}
+
+.card-vignette-visuel img
+{
+width: 100%;
+border-radius: 16px;
+}
+
+
+
+
+
+/* -----------------------
+CSS pour card-photo 
+------------------------*/
+.card-photo-visuel
+{
+height: 100%;
+border-radius: 16px;
+-webkit-box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1); 
+box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1);
+}
+
+.card-photo-visuel img
+{
+width: 100%;
+border-radius: 16px;
+}
+
+.card-photo-body h3
+{
+text-align: center;
+font-size: 1.5rem ;
+}
+
+
+/* -----------------------
+CSS pour card-category 
+------------------------*/
+.card-category-visuel
+{
+height: 100%;
+border-radius: 16px;
+-webkit-box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1); 
+box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1);
+padding: 44px
+}
+
+.background-category-eveil
+{
+    background-color: rgb(235,159,74);
+}
+
+.background-category-societe
+{
+    background-color: rgb(218,127,87);
+}
+
+.background-category-construction
+{
+    background-color: rgb(201,95,99);
+}
+
+.background-category-imitation
+{
+    background-color: rgb(132,176,160);
+}
+
+.card-category-visuel img
+{
+width: 100%;
+border-radius:90%
+} 
+
+.card-category-body h3
+{
+text-align: center;
+font-size: 1.5rem ;
+}
+
+/* -----------------------
+CSS pour card-product 
+------------------------*/
+.card-product-visuel
+{
+height: 100%;
+border-radius: 16px;
+-webkit-box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1); 
+box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1);
+position: relative;
+}
+
+.card-product-visuel img
+{
+width: 100%;
+border-radius: 16px;
+}
+
+.card-product-visuel .bt-like
+{
+    position:absolute;
+    right: 16px;
+    top: 4px;
+}
+
+.card-product-visuel .tag-new
+{
+    text-decoration: none;
+    color: rgb(10,13,34);
+    background-color: rgb(235,159,74);
+    padding: 4px 16px 4px 16px;
+    border-radius: 16px;
+    position:absolute;
+    margin-left: 16px;
+    margin-top: 4px;
+}
+
+.card-product-body
+{
+position: relative;
+}
+
+.card-product-body h3
+{
+text-align: center;
+font-size: 1.5rem ;
+}
+.card-product-body h4
+{
+text-align: center;
+font-size: 1.1rem ;
+} 
+.card-product-body .bt-plus
+{
+position: absolute;
+border-radius: 4px;
+top:10px;
+right: 0;
+}
+
+/* -----------------------
+CSS pour card-icone 
+------------------------*/
+.card-icone-visuel
+{
+height: 100%;
+border-radius: 16px;
+-webkit-box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1); 
+box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1);
+background-color: rgb(255,254,253);
+padding-left: 44px;
+padding-right: 44px;
+padding-top: 22px;
+padding-bottom: 44px;
+}
+
+.card-vignette-visuel img
+{
+width: 100%;
+border-radius: 16px;
+}
+
+
+.card-icone-visuel h3
+{
+    font-size: 1.5rem ;
+    font-weight: 700;
+    margin-top: 44px;
+}
+.card-icone-visuel h4
+{
+    font-size: 1rem ;
+    font-weight: 400;
+    text-transform: uppercase ;
+} 

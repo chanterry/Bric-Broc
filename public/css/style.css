@@ -1,0 +1,161 @@
+/* style CSS hors nav, card ou form */
+
+/*.html
+{
+font-size: 62.5%;
+} */
+
+/* couleur primaire: Jaune 
+#EB9F4A
+rgb(235,159,74)
+couleurs secondaires: Vert, Orange, Rouge 
+#84B0A0
+rgb(132,176,160)
+#DA7F57
+rgb(218,127,87)
+#C95F63
+rgb(201,95,99)
+couleurs de fond: Beige, Blanc 
+#F1E6E0
+rgb(241,230,224)
+#FFFEFD
+rgb(255,254,253)
+couleur texte: Noir
+#0A0D22
+rgb(10,13,34) */
+
+
+/* -----------------------
+CSS SECTION HEADER 
+------------------------*/
+.fond-card-header
+{
+    background-color: rgb(241,230,224);
+}
+
+
+/* -----------------------
+CSS SECTION NOS BOX 
+-------------------------*/
+#nos-box
+{
+    margin-top: 88px;
+    margin-bottom: 88px;
+}
+
+h2
+{
+    position: relative;
+    z-index: 21;
+}
+
+.form-geometric
+{
+    transform: rotate(32.97deg);
+    margin-top: -176px;
+}
+
+
+/* -----------------------
+CSS SECTION CONCEPT (comment ça marche?) 
+-------------------------*/
+#concept
+{
+    background: rgb(241,230,224);
+    padding-top: 88px;
+    padding-bottom: 88px;
+}
+
+#concept .btn
+{
+    margin-top: 44px;
+}
+
+
+
+/* -----------------------
+CSS SECTION CATEGORIES
+-------------------------*/
+#categories
+{
+    margin-top: 88px;
+    margin-bottom: 88px;
+}
+
+
+
+/* -----------------------
+CSS SECTION NOUVEAUTES
+-------------------------*/
+#nouveautes
+{
+    padding-top: 88px;
+    padding-bottom: 88px;
+    background-color: rgb(241,230,224);
+}
+
+
+/* -----------------------
+CSS SECTION NOS VALEURS
+-------------------------*/
+#nosvaleurs
+{
+    margin-top: 88px;
+    margin-bottom: 88px;
+}
+
+
+/* -----------------------
+CSS SECTION DON DE JOUET
+-------------------------*/
+#dondejouet
+{
+    background-image: url(../images/img_fond_section1440x623.jpg);
+    background-repeat: no-repeat;
+    background-position:center top;
+    background-size: cover;
+    padding-top: 132px;
+    padding-bottom: 88px;
+    margin-top: 44px;
+    margin-bottom: 44px;
+}
+
+.image-dondejouet
+{
+    border-radius: 16px;
+    margin-bottom: 88px;
+}
+
+h2
+{
+    text-align: center;
+}
+
+.dondejouet-description
+{
+    background-color: #FFFDFD;
+    border-radius: 16px;
+    padding-left: 88px;
+    padding-right: 88px;
+    padding-top: 44px;
+    padding-bottom: 44px;
+    margin-top: -44px;
+}
+
+
+
+
+/* -----------------------
+CSS SECTION FOOTER 
+-------------------------*/
+
+footer
+{
+    padding-top: 130px;
+    background-image: url(../images/img_fond_footer.jpg);
+    background-repeat: no-repeat;
+    background-position:center top;
+    background-size: cover;
+}
+
+
