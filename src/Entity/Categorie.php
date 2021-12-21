@@ -61,7 +61,7 @@ class Categorie
         return $this->Trancheage;
     }
 
-    public function setTrancheage(int $Trancheage): self
+    public function setTrancheage(string $Trancheage): self
     {
         $this->Trancheage = $Trancheage;
 
