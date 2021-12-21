@@ -27,12 +27,12 @@ class ProduitCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('title'),
-            TextEditorField::new('description'),
-            ImageField::new('photo')
+            TextField::new('Nom'),
+            TextEditorField::new('Descriptif'),
+            ImageField::new('Photo')
             ->setBasePath(' uploads/')
             ->setUploadDir('public/uploads')
-            ->setFormType(FileUploadType::class)
+//            ->setFormType(FileUploadType::class)
             ->setUploadedFileNamePattern('[randomhash].[extension]')
             ->setRequired(false),
         ];
