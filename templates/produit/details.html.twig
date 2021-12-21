@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProduitController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<div class="example-wrapper">
+		<h1>Page details ✅</h1>
+
+		<h2>{{details.nom}}</h2>
+		<h3>Descriptif</h3>
+		<p>{{details.descriptif}}</p>
+	</br>
+	<p>{{details.marque}}</p>
+	<button type="submit" data-name="{{details.nom}}" data-content="{{details.descriptif}}" data-img="{{details.photo}}" class="btn-ajouter">Ajouter au panier</button>
+
+
+</div>{% endblock %}

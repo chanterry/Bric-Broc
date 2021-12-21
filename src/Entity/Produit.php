@@ -44,6 +44,11 @@ class Produit
      */
     private $categorie;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $Descriptif;
+
     public function __construct()
     {
         $this->categorie = new ArrayCollection();
@@ -122,6 +127,18 @@ class Produit
     public function removeCategorie(categorie $categorie): self
     {
         $this->categorie->removeElement($categorie);
+
+        return $this;
+    }
+
+    public function getDescriptif(): ?string
+    {
+        return $this->Descriptif;
+    }
+
+    public function setDescriptif(string $Descriptif): self
+    {
+        $this->Descriptif = $Descriptif;
 
         return $this;
     }
