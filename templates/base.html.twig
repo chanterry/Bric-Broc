@@ -16,6 +16,7 @@
 		<title>
 			{% block title %}Welcome!{% endblock %}
 		</title>
+
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
@@ -84,6 +85,7 @@
 
 	</body>
 </html>
+
 <script src="./js/main.js"></script>
 {% block javascripts %}
 	{{ encore_entry_script_tags('app') }}
