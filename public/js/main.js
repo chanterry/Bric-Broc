@@ -88,7 +88,9 @@ function commander() {
 
   if (contentPanier.length < contentBox) {
 
-    alert('Il vous reste' + (contentPanier.length - contentBox) + 'produit à ajouter');
+    alert('Il vous reste' + (contentBox - contentPanier.length) + 'produit à ajouter');
+    // window.location = '';
+
   } else {
     console.log('toto');
   }
