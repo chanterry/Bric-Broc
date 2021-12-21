@@ -77,5 +77,19 @@ let btnCommander = document.getElementById("commander");
 btnCommander.addEventListener('click', commander);
 
 function commander() {
+  let contentPanier = window.localStorage.getItem(keyLocalStorage);
+  contentPanier = JSON.parse(contentPanier);
 
+  let contentBox = window.localStorage.getItem(bricbrocBox);
+
+  //console.log(contentPanier.length);
+  // console.log(contentBox);
+
+
+  if (contentPanier.length < contentBox) {
+
+    alert('Il vous reste' + (contentPanier.length - contentBox) + 'produit à ajouter');
+  } else {
+    console.log('toto');
+  }
 }
