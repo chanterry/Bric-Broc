@@ -17,16 +17,23 @@ function ajoutPanier() {
     tabAjoutPanier = [];
   }
 
-  //this représente l'élément sur le quel tu as cliqué
-  let nameValeur = this.dataset.name;
-  let descValeur = this.dataset.content;
-  let imgValeur = this.dataset.img;
-  tabAjoutPanier.push({ "title": nameValeur, "description": descValeur, "img": imgValeur });
 
-  //transformation json
-  //envoi dnas le storage
-  localStorage.setItem(keyLocalStorage, JSON.stringify(tabAjoutPanier));
+  let contentBox = window.localStorage.getItem(bricbrocBox);
 
+  if (tabAjoutPanier.length < contentBox) {
+
+    //this représente l'élément sur le quel tu as cliqué
+    let nameValeur = this.dataset.name;
+    let descValeur = this.dataset.content;
+    let imgValeur = this.dataset.img;
+    tabAjoutPanier.push({ "title": nameValeur, "description": descValeur, "img": imgValeur });
+
+    //transformation json
+    //envoi dnas le storage
+    localStorage.setItem(keyLocalStorage, JSON.stringify(tabAjoutPanier));
+  } else {
+    alert('Vous ne pouvez plus ajouter de produit!!!');
+  }
 }
 
 let contenuPanier = "";
@@ -49,13 +56,6 @@ function recupererPanier() {
   }
 }
 
-//function supprimerArticlePanier(event){
-//  let data = window.localStorage.getItem(keyLocalStorage);
-//  data=JSON.parse(data);
-
-//  let id = event.currentTarget.dataset.
-//}
-
 
 const bricbrocBox = "bricbrocBox";
 let typeBox = document.querySelectorAll(".box");
@@ -68,7 +68,9 @@ for (box of typeBox) {
 
 function chooseBox(event) {
   let box = this.dataset.value;
+  let href = this.dataset.href;
   localStorage.setItem(bricbrocBox, box);
+  document.location.href = href;
 }
 
 
@@ -82,16 +84,14 @@ function commander() {
 
   let contentBox = window.localStorage.getItem(bricbrocBox);
 
-  //console.log(contentPanier.length);
-  // console.log(contentBox);
-
-
   if (contentPanier.length < contentBox) {
 
-    alert('Il vous reste' + (contentBox - contentPanier.length) + 'produit à ajouter');
-    // window.location = '';
+    window.confirm('Il vous reste' + (contentBox - contentPanier.length) + 'produit à ajouter');
+    document.location.href = 'http://127.0.0.1:8000/produit';
 
-  } else {
-    console.log('toto');
+  } else if (contentPanier.length == contentBox) {
+    window.confirm('Votre commande est prise en compte!!');
+    window.location.href = 'http://127.0.0.1:8000/cart';
+
   }
 }
