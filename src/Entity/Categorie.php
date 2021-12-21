@@ -56,7 +56,7 @@ class Categorie
         return $this;
     }
 
-    public function getTrancheage(): ?int
+    public function getTrancheage(): ?string
     {
         return $this->Trancheage;
     }

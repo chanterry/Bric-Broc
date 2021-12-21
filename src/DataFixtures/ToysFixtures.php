@@ -27,7 +27,7 @@ class ToysFixtures extends Fixture
                 $u = 0;
             }
                 $produit = new Produit();
-                $produit->setNom ('Nom'. $i);
+                $produit->setNom ('Jouet'. $i);
                 $produit->setMarque ('Marque'. $i);
                 $produit->setPhoto ('Photo'. $i);
                 $produit->setDisponibilite (true);
