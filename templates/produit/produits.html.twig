@@ -28,6 +28,29 @@
 		</br>
 		<button type="submit" data-name="{{produit.nom}}" data-content="{{produit.descriptif}}" data-img="{{produit.photo}}" class="btn-ajouter">Ajouter au panier</button>
 	{% endfor %}
+</div>
 
+<div class="example-wrapper">
+	<h1>Types de jouets</h1>
+	<form method="POST" action="/produit" id="formSearch">
+		{% for category in listCategory %}
 
-</div>{% endblock %}
+			<input type="radio" class="formCategory" name="btn" value="{{category.id}}">
+			<label for="category.id">
+				{{category.typedejouet}}
+			</label>
+
+		{% endfor %}
+
+		<div class="example-wrapper">
+			<h1>Marque</h1>
+			{% for marque in marque %}
+
+				<input type="radio" class="formMarque" name="btnMarque" value="{{marque.marque}}">
+				<label for="marque.id">
+					{{marque.marque}}
+				</label>
+
+			{% endfor %}
+		</div>
+	{% endblock %}
