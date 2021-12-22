@@ -41,5 +41,16 @@
 			</label>
 
 		{% endfor %}
-	</form>
-</div>{% endblock %}
+
+		<div class="example-wrapper">
+			<h1>Marque</h1>
+			{% for marque in marque %}
+
+				<input type="radio" class="formMarque" name="btnMarque" value="{{marque.marque}}">
+				<label for="marque.id">
+					{{marque.marque}}
+				</label>
+
+			{% endfor %}
+		</div>
+	{% endblock %}

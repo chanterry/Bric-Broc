@@ -19,19 +19,25 @@ class ProduitController extends AbstractController
     {
         //var_dump($request->get('btn'));
 
+        //var_dump($request->get('btnMarque'));
+
         if ($request->get('btn') != null) {
             $produits = $repository->createQueryBuilder('p')
                 ->join('p.categorie', 'c')
                 ->where('c.id = :category_id')
                 ->setParameter('category_id', $request->get('btn'))
                 ->getQuery()->getResult();
+        } elseif ($request->get('btnMarque') != null) {
+            $produits = $repository->findBy(['Marque' => $request->get('btnMarque')]);
         } else {
             $produits = $repository->findAll();
         }
 
+
         return $this->render('produit/produits.html.twig', [
             'produits' => $produits,
             'listCategory' => $repositoryCategorie->findAll(),
+            'marque' => $repository->findAll(),
 
         ]);
     }
@@ -42,7 +48,6 @@ class ProduitController extends AbstractController
 
     public function details($id, ProduitRepository $repository): Response
     {
-
         return $this->render('produit/details.html.twig', [
             'details' => $repository->find($id),
         ]);
