@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Produit;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -32,4 +33,25 @@ class ProduitController extends AbstractController
             'details' => $repository->find($id),
         ]);
     }
+
+    /**
+     * @Route("/produit_bdd/{keyword}", name="produit_bdd")
+     */
+
+     public function produit_bdd($keyword)
+     {
+        $product = $this->getDoctrine()->getRepository(Produit::class)->createQueryBuilder('p')
+        ->where('p.Nom LIKE :nom')
+        ->setParameter ("nom", "%". $keyword ."%")
+        ->getQuery()
+        ->getResult();
+
+        $newTab = [];
+
+        foreach ($product as $row){  
+            array_push ($newTab, ["nom" => $row->getNom(), "id" => $row->getId()]);
+        }
+            echo json_encode ($newTab);
+            die();
+     }
 }
