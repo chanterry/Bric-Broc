@@ -8,16 +8,19 @@ const Toys = () => {
     const [data, setData] = useState([]);
     const [searchToy, setSearchToy] = useState("");
     let url = '/produit_bdd/' + searchToy;
-    let urlPageProduit = '/produit_bdd/' + searchToy;
+    let urlPageProduit = '/details-';
 
     useEffect(() => {
+        if (searchToy > 0) {
         fetch(url)
         .then(response => response.json())
         .then(json => setData(json));
+    }
     }, [searchToy]);
 
-    let redirection = function redirection() {
-        document.location.href= urlPageProduit;
+    let redirection = function redirection(e) {
+        let produitID = e.currentTarget.dataset.key;
+        document.location.href= urlPageProduit + produitID;
     }
 
     return (
@@ -30,8 +33,8 @@ const Toys = () => {
 
             <div className="searchResult" >
                 {data.map((item) => {
-                     return(
-                        <div key={item.id} onClick={redirection}>   
+                    return(
+                        <div data-key={item.id} onClick={redirection}>   
                         {item.nom}
                         </div>
                     )
