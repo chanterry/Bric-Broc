@@ -46,8 +46,12 @@ class ProduitController extends AbstractController
         ->getQuery()
         ->getResult();
 
-        return $this->render(
-            
-        );
+        $newTab = [];
+
+        foreach ($product as $row){  
+            array_push ($newTab, ["nom" => $row->getNom(), "id" => $row->getId()]);
+        }
+            echo json_encode ($newTab);
+            die();
      }
 }

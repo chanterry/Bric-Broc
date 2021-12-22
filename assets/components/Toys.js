@@ -8,12 +8,17 @@ const Toys = () => {
     const [data, setData] = useState([]);
     const [searchToy, setSearchToy] = useState("");
     let url = '/produit_bdd/' + searchToy;
+    let urlPageProduit = '/produit_bdd/' + searchToy;
 
     useEffect(() => {
         fetch(url)
         .then(response => response.json())
         .then(json => setData(json));
     }, [searchToy]);
+
+    let redirection = function redirection() {
+        document.location.href= urlPageProduit;
+    }
 
     return (
         <>
@@ -26,8 +31,8 @@ const Toys = () => {
             <div className="searchResult" >
                 {data.map((item) => {
                      return(
-                        <div key={item.id}>   
-                        {item.name}
+                        <div key={item.id} onClick={redirection}>   
+                        {item.nom}
                         </div>
                     )
                 })}
