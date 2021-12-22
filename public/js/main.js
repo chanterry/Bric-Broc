@@ -17,7 +17,6 @@ function ajoutPanier() {
     tabAjoutPanier = [];
   }
 
-
   let contentBox = window.localStorage.getItem(bricbrocBox);
 
   if (tabAjoutPanier.length < contentBox) {
@@ -32,7 +31,8 @@ function ajoutPanier() {
     //envoi dnas le storage
     localStorage.setItem(keyLocalStorage, JSON.stringify(tabAjoutPanier));
   } else {
-    alert('Vous ne pouvez plus ajouter de produit!!!');
+    alert('Vous ne pouvez plus ajouter de produit. Vôtre box est complète!!');
+    window.location.href = 'cart';
   }
 }
 
@@ -87,11 +87,23 @@ function commander() {
   if (contentPanier.length < contentBox) {
 
     window.confirm('Il vous reste' + (contentBox - contentPanier.length) + 'produit à ajouter');
-    document.location.href = 'http://127.0.0.1:8000/produit';
+    document.location.href = 'produit';
 
   } else if (contentPanier.length == contentBox) {
     window.confirm('Votre commande est prise en compte!!');
-    window.location.href = 'http://127.0.0.1:8000/cart';
+    window.location.href = 'cart';
 
+  }
+}
+
+let viderPanier = document.getElementById("viderPanier");
+viderPanier.addEventListener('click', viderLePanier);
+
+
+function viderLePanier() {
+  viderPanier = confirm('Êtes-vous sur de vouloir vider le panier ?');
+  if (viderPanier) {
+    window.localStorage.removeItem(keyLocalStorage);
+    // setTimeout(recupererPanier(), 500);
   }
 }
