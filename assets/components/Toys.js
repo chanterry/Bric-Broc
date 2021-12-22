@@ -1,7 +1,8 @@
 import {useState, useEffect} from "react";
-
 import React from "react";
 import Recherche from "./Recherche";
+
+import '../styles/app.css';
 
 const Toys = () => {
 
@@ -11,12 +12,13 @@ const Toys = () => {
     let urlPageProduit = '/details-';
 
     useEffect(() => {
-        if (searchToy > 0) {
-        fetch(url)
-        .then(response => response.json())
-        .then(json => setData(json));
-    }
-    }, [searchToy]);
+        if (searchToy.length > 0) {
+            fetch(url)
+            .then(response => response.json())
+            .then(json => setData(json));
+    }}, [searchToy]);
+
+    console.log (searchToy)
 
     let redirection = function redirection(e) {
         let produitID = e.currentTarget.dataset.key;
