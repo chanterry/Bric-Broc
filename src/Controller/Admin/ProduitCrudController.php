@@ -28,6 +28,7 @@ class ProduitCrudController extends AbstractCrudController
     {
         return [
             TextField::new('Nom'),
+            TextField::new('Marque'),
             TextEditorField::new('Descriptif'),
             ImageField::new('Photo')
             ->setBasePath(' uploads/')
