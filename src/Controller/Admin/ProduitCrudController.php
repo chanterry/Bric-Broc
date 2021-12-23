@@ -23,7 +23,7 @@ class ProduitCrudController extends AbstractCrudController
         return Produit::class;
     }
 
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -31,12 +31,11 @@ class ProduitCrudController extends AbstractCrudController
             TextField::new('Marque'),
             TextEditorField::new('Descriptif'),
             ImageField::new('Photo')
-            ->setBasePath(' uploads/')
-            ->setUploadDir('public/uploads')
-//            ->setFormType(FileUploadType::class)
-            ->setUploadedFileNamePattern('[randomhash].[extension]')
-            ->setRequired(false),
+                ->setBasePath('uploads/')
+                ->setUploadDir('public/uploads')
+                //            ->setFormType(FileUploadType::class)
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false),
         ];
     }
-    
 }
