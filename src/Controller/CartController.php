@@ -34,6 +34,7 @@ class CartController extends AbstractController
         $user_coordonnes->setFirstname($security->getUser()->getFirstname());
         $user_coordonnes->setLastname($security->getUser()->getLastname());
         $user_coordonnes->setEmail($security->getUser()->getEmail());
+        $user_coordonnes->setTelephone($security->getUser()->getTelephone());
 
         $form = $this->createForm(CartFormType::class, $user_coordonnes);
         $form ->handleRequest($request);
@@ -66,6 +67,16 @@ class CartController extends AbstractController
         
         return $this->render('cart/address.html.twig', [
             'CartAddressType' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/validation", name="validation")
+     */
+    public function validation(): Response
+    {
+        return $this->render('cart/validation.html.twig', [
+            'controller_name' => 'CartController',
         ]);
     }
 }

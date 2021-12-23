@@ -60,15 +60,5 @@ class UserController extends AbstractController
             'EditProfile' => $form->createView(),
         ]);
     }
-
-    /**
-     * @Route("/confirmation_inscription", name="confirmation_inscription")
-     */
-    public function inscription(): Response
-    {
-        return $this->render('user/confirmation_inscription.html.twig', [
-            'controller_name' => 'UserController',
-        ]);
-    }
     
 }
