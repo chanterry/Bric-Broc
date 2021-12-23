@@ -77,5 +77,10 @@ let displayBar = document.getElementById('icon_search');
 displayBar.addEventListener('click', showSearchBar);
 
 function showSearchBar(){
+
+  if(document.querySelector('.searchBar').style.display=="block"){
+    document.querySelector('.searchBar').style.display="none";
+  } else {
     document.querySelector('.searchBar').style.display="block";
+  }
 }
