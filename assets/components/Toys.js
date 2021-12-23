@@ -44,7 +44,6 @@ const Toys = () => {
             </div>
         </>
     )
-
 }
 
 export default Toys

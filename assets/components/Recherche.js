@@ -8,12 +8,15 @@ const Recherche = (props) => {
     }
     
     return (
-        <input 
-            type="text" 
-            placeholder="Rechercher" 
-            searchToy={searchToy} 
-            onChange={handleSearchToy}
-        />
+        <>
+            <input 
+                type="text" 
+                placeholder="Rechercher" 
+                searchToy={searchToy} 
+                onChange={handleSearchToy}
+            />
+
+        </>
     )
 }
 

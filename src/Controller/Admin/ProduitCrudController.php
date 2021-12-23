@@ -31,9 +31,9 @@ class ProduitCrudController extends AbstractCrudController
             TextField::new('Marque'),
             TextEditorField::new('Descriptif'),
             ImageField::new('Photo')
-            ->setBasePath(' uploads/')
+            ->setBasePath('uploads/')
             ->setUploadDir('public/uploads')
-//            ->setFormType(FileUploadType::class)
+//          ->setFormType(FileUploadType::class)
             ->setUploadedFileNamePattern('[randomhash].[extension]')
             ->setRequired(false),
         ];
