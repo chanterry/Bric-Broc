@@ -23,10 +23,12 @@
 		{% for produit in produits %}
 
 			<h3>{{produit.nom}}</h3>
+			<div>
+				{{produit.photo}}</div>
 			<p>{{produit.descriptif}}</p>
 			<a href="{{path('produitdetails', {'id':produit.id})}}">Voir le details du produit</a>
 		</br>
-		<button type="submit" data-name="{{produit.nom}}" data-content="{{produit.descriptif}}" data-img="{{produit.photo}}" class="btn-ajouter">Ajouter au panier</button>
+		<div class="btn btn-primary btn-ajouter" data-name="{{produit.nom}}" data-content="{{produit.descriptif}}" data-img="{{produit.photo}}">Ajouter au panier</div>
 	{% endfor %}
 </div>
 
@@ -53,4 +55,9 @@
 
 			{% endfor %}
 		</div>
+	{% endblock %}
+
+	{% block javascripts %}
+		<script src="./js/search.js"></script>
+
 	{% endblock %}

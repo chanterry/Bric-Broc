@@ -2,9 +2,9 @@ const keyLocalStorage = 'TabPanier';
 
 let btns = document.querySelectorAll('.btn-ajouter');
 
-for (btn of btns) {
-  if (btn) {
-    btn.addEventListener('click', ajoutPanier);
+for (btnAjout of btns) {
+  if (btnAjout) {
+    btnAjout.addEventListener('click', ajoutPanier);
   }
 }
 
@@ -30,9 +30,14 @@ function ajoutPanier() {
     //transformation json
     //envoi dnas le storage
     localStorage.setItem(keyLocalStorage, JSON.stringify(tabAjoutPanier));
-  } else {
-    alert('Vous ne pouvez plus ajouter de produit. Vôtre box est complète!!');
-    window.location.href = 'cart';
+
+    if (tabAjoutPanier.length == contentBox) {
+      window.confirm('Vous ne pouvez plus ajouter de produit. Vôtre box est complète!!');
+      document.location.href = 'cart';
+    }
+
+
+
   }
 }
 
@@ -40,7 +45,7 @@ let contenuPanier = "";
 
 function recupererPanier() {
   let contenu = document.getElementById('contenu');
-
+  contenu.innerHTML = "";
   if (localStorage.getItem(keyLocalStorage) !== null) {
     let panier = window.localStorage.getItem(keyLocalStorage);
 
@@ -73,37 +78,3 @@ function chooseBox(event) {
   document.location.href = href;
 }
 
-
-
-let btnCommander = document.getElementById("commander");
-btnCommander.addEventListener('click', commander);
-
-function commander() {
-  let contentPanier = window.localStorage.getItem(keyLocalStorage);
-  contentPanier = JSON.parse(contentPanier);
-
-  let contentBox = window.localStorage.getItem(bricbrocBox);
-
-  if (contentPanier.length < contentBox) {
-
-    window.confirm('Il vous reste' + (contentBox - contentPanier.length) + 'produit à ajouter');
-    document.location.href = 'produit';
-
-  } else if (contentPanier.length == contentBox) {
-    window.confirm('Votre commande est prise en compte!!');
-    window.location.href = 'cart';
-
-  }
-}
-
-let viderPanier = document.getElementById("viderPanier");
-viderPanier.addEventListener('click', viderLePanier);
-
-
-function viderLePanier() {
-  viderPanier = confirm('Êtes-vous sur de vouloir vider le panier ?');
-  if (viderPanier) {
-    window.localStorage.removeItem(keyLocalStorage);
-    // setTimeout(recupererPanier(), 500);
-  }
-}

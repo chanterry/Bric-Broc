@@ -1,10 +1,13 @@
 let btnSearch = document.querySelectorAll('.formCategory');
 
 for (search of btnSearch) {
-  if (search) { btnSearch = addEventListener('click', searchCategory); }
+  if (search) {
+    search.addEventListener('click', searchCategory);
+  }
 }
 
-function searchCategory(event) {
+function searchCategory() {
+  console.log('ok');
   let dataForm = document.getElementById('formSearch');
 
   //console.log('hello');
@@ -14,10 +17,10 @@ function searchCategory(event) {
 let btnSearchMarque = document.querySelectorAll('.formMarque');
 
 for (searchMarque of btnSearchMarque) {
-  if (searchMarque) { btnSearchMarque = addEventListener('click', searchMarque); }
+  if (searchMarque) { searchMarque.addEventListener('click', searchMarqueProduct); }
 }
 
-function searchMarque() {
-  let dataFormMarque = document.getElementById('formMarqueSearch');
+function searchMarqueProduct() {
+  let dataFormMarque = document.getElementById('formSearch');
   dataFormMarque.submit();
 }
