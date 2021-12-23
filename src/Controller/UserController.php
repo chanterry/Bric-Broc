@@ -28,7 +28,7 @@ class UserController extends AbstractController
         $user_adresse->setTelephone($security->getUser()->getTelephone());
         $user_adresse->setEmail($security->getUser()->getEmail());
 
-        $adress = $this->getDoctrine()->getRepository(Adresse::class)->findOneBy(['id' => $security->getUser()->getId()]);
+        $adress = $this->getDoctrine()->getRepository(Adresse::class)->findOneBy(['user' => $security->getUser()->getId()]);
         $user_adresse->setNumero($adress->getNumero());
         $user_adresse->setRue($adress->getRue());
         $user_adresse->setVille($adress->getVille());
@@ -45,7 +45,7 @@ class UserController extends AbstractController
             $user_info->setTelephone($user_adresse->getTelephone());
             $user_info->setEmail($user_adresse->getEmail());
 
-            $update_adresse = $this->getDoctrine()->getRepository(Adresse::class)->findOneBy(['id' => $security->getUser()->getId()]);
+            $update_adresse = $this->getDoctrine()->getRepository(Adresse::class)->findOneBy(['user' => $security->getUser()->getId()]);
             $update_adresse->setNumero($user_adresse->getNumero());
             $update_adresse->setRue($user_adresse->getRue());
             $update_adresse->setVille($user_adresse->getVille());

@@ -55,14 +55,23 @@ class CartController extends AbstractController
      */
     public function cart_address(Request $request): Response
     {
+
         $address = new Adresse();
+        $addresUser = $this->getDoctrine()->getRepository(Adresse::class)->findOneBy(['user' => $this->getUser()->getId()]);
+        if($addresUser != null){
+            $address = $addresUser;
+        }
+
         $form = $this->createForm(CartAddressType::class, $address);
         $form ->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
+            $address->setUser($this->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($address);
             $em->flush();
+
+            return $this->redirectToRoute('edit'); 
         }
         
         return $this->render('cart/address.html.twig', [
