@@ -84,3 +84,4 @@ displayBar.addEventListener('click', showSearchBar);
 function showSearchBar() {
   document.querySelector('.searchBar').style.display = "block";
 }
+

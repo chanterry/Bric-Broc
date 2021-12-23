@@ -34,11 +34,15 @@ class ProduitController extends AbstractController
             $produits = $repository->findAll();
         }
 
+        $marque = $repository->createQueryBuilder('p')
+            ->select('p.Marque')
+            ->groupBy('p.Marque')
+            ->getQuery()->getResult();
 
         return $this->render('produit/produits.html.twig', [
             'produits' => $produits,
             'listCategory' => $repositoryCategorie->findAll(),
-            'marque' => $repository->findAll(),
+            'marque' => $marque,
 
         ]);
     }
