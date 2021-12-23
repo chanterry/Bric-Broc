@@ -23,13 +23,13 @@
 		{% for produit in produits %}
 
 			<h3>{{produit.nom}}</h3>
-			<p>{{produit.descriptif}}</p>
-			<a href="{{path('produitdetails', {'id':produit.id})}}">Voir le details du produit</a>
+			<img src="/uploads/{{produit.photo}}">
+			<p>{{produit.descriptif | raw}}</p>
+			<a href=" {{path('produitdetails', {'id':produit.id} )}}">Voir le details du produit</a>
 		</br>
-		<button type="submit" data-name="{{produit.nom}}" data-content="{{produit.descriptif}}" data-img="{{produit.photo}}" class="btn-ajouter">Ajouter au panier</button>
+		<div class="btn btn-primary btn-ajouter" data-name="{{produit.nom}}" data-content="{{produit.descriptif}}" data-img="{{produit.photo}}">Ajouter au panier</div>
 	{% endfor %}
 </div>
-
 <div class="example-wrapper">
 	<h1>Types de jouets</h1>
 	<form method="POST" action="/produit" id="formSearch">
@@ -53,4 +53,7 @@
 
 			{% endfor %}
 		</div>
+	{% endblock %}
+	{% block javascripts %}
+		<script src="./js/search.js"></script>
 	{% endblock %}

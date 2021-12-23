@@ -2,9 +2,9 @@ const keyLocalStorage = 'TabPanier';
 
 let btns = document.querySelectorAll('.btn-ajouter');
 
-for (btn of btns) {
-  if (btn) {
-    btn.addEventListener('click', ajoutPanier);
+for (btnAjout of btns) {
+  if (btnAjout) {
+    btnAjout.addEventListener('click', ajoutPanier);
   }
 }
 
@@ -30,9 +30,14 @@ function ajoutPanier() {
     //transformation json
     //envoi dnas le storage
     localStorage.setItem(keyLocalStorage, JSON.stringify(tabAjoutPanier));
-  } else {
-    alert('Vous ne pouvez plus ajouter de produit. Vôtre box est complète!!');
-    window.location.href = 'cart';
+
+    if (tabAjoutPanier.length == contentBox) {
+      window.confirm('Vous ne pouvez plus ajouter de produit. Vôtre box est complète!!');
+      document.location.href = 'cart';
+    }
+
+
+
   }
 }
 
@@ -40,7 +45,7 @@ let contenuPanier = "";
 
 function recupererPanier() {
   let contenu = document.getElementById('contenu');
-
+  contenu.innerHTML = "";
   if (localStorage.getItem(keyLocalStorage) !== null) {
     let panier = window.localStorage.getItem(keyLocalStorage);
 
@@ -76,6 +81,6 @@ function chooseBox(event) {
 let displayBar = document.getElementById('icon_search');
 displayBar.addEventListener('click', showSearchBar);
 
-function showSearchBar(){
-    document.querySelector('.searchBar').style.display="block";
+function showSearchBar() {
+  document.querySelector('.searchBar').style.display = "block";
 }
