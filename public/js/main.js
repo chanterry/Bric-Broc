@@ -82,6 +82,11 @@ let displayBar = document.getElementById('icon_search');
 displayBar.addEventListener('click', showSearchBar);
 
 function showSearchBar() {
-  document.querySelector('.searchBar').style.display = "block";
+  if (document.querySelector('.searchBar').style.display == "block") {
+    document.querySelector('.searchBar').style.display = "none";
+  } else {
+    document.querySelector('.searchBar').style.display = "block";
+  }
 }
+
 
