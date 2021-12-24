@@ -1,7 +1,8 @@
-/*.html
+
+html
 {
-font-size: 62.5%;
-} */
+font-family: 'Poppins', sans-serif;
+}
 
 /* couleur primaire: Jaune 
 #EB9F4A
@@ -24,7 +25,7 @@ rgb(10,13,34) */
 
 html
 {
-    color: #0A0D22;
+    color: rgb(10,13,34);
 }
 
 /* -----------------------
@@ -99,16 +100,31 @@ CSS pour card_box
 
 .box-description
 {
-    background: #84B0A0;
     padding-left: 22px;
     padding-right: 22px;
     box-shadow: 0px 2px 4px rgba(7, 4, 146, 0.1), 0px 24px 60px rgba(6, 47, 125, 0.05), 0px 12px 24px rgba(27, 59, 119, 0.05);
     border-radius: 0px 0px 16px 16px;
 }
 
+.couleur-box4
+{
+    background-color: rgb(132,176,160);
+}
+
+.couleur-box7
+{
+    background-color: rgb(218,127,87);
+}
+
+.couleur-box10
+{
+    background: rgb(201,95,99);
+}
+
 .card-box h3
 {
     padding-top: 22px;
+    color: rgb(255,254,253);
 }
 
 .card-box .price
@@ -129,39 +145,6 @@ CSS pour card_box
 /* -----------------------
 CSS pour card-vignette 
 ------------------------*/
-/*.card-vignette-visuel
-{
-height: 100%;
-border-radius: 16px;
--webkit-box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1); 
-box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.1);
-}
-
-.card-vignette-visuel img
-{
-width: 100%;
-border-radius: 16px;
-}
-
-.card-vignette-body
-{
-position: relative;
-}
-
-.card-vignette-body h3
-{
-text-align: center;
-}
-.card-vignette-body h4
-{
-text-align: center;
-} 
-.card-vignette-body .bt-plus
-{
-position: absolute;
-top:10px;
-right: 0;
-} */
 
 .card-vignette-visuel
 {
@@ -264,7 +247,6 @@ position: relative;
 .card-product-visuel img
 {
 width: 100%;
-border-radius: 16px;
 }
 
 .card-product-visuel .bt-like
@@ -331,16 +313,131 @@ width: 100%;
 border-radius: 16px;
 }
 
-
 .card-icone-visuel h3
 {
     font-size: 1.5rem ;
     font-weight: 700;
     margin-top: 44px;
 }
+
 .card-icone-visuel h4
 {
     font-size: 1rem ;
     font-weight: 400;
     text-transform: uppercase ;
 } 
+
+
+/*-----------------------------
+CSS pour CARD REVIEW
+------------------------------*/
+.img-force-fluid
+{
+    width:100%;
+}
+card-img-middletop
+{
+    width:25px;
+    height:25px;
+}
+
+.card-body text-center h6
+{
+    font-weight: bold;
+}
+
+.card-text
+{
+    padding-top: 30px;
+}
+
+.card
+{
+    box-shadow: 0px 2px 6px #b5b3b9;
+}
+
+#temoignages
+{
+    margin-top: 100px;
+}
+
+
+.card .card-img-top
+{
+    border-radius: 50%;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-top: 15px;
+    
+}
+
+.card-review .card-title
+{font-weight: 700;
+
+}
+
+/* -----------------------
+CSS pour card_gift
+------------------------*/
+
+.card-gift h2
+{
+    padding-top: 44px;
+    padding-bottom: 22px;
+}
+
+.background-gift1mois
+{
+    background-color: rgb(218,127,87);
+}
+
+.background-gift2mois
+{
+    background-color: rgb(201,95,99);
+}
+
+.background-gift3mois
+{
+    background-color: rgb(132,176,160);
+}
+
+.background-gift4mois
+{
+    background-color: rgb(218,127,87);
+}
+
+.img-box
+{
+    border-radius: 16px 16px 0px 0px;
+    width: 100%;
+}
+
+.box-description
+{
+    padding-left: 22px;
+    padding-right: 22px;
+    box-shadow: 0px 2px 4px rgba(7, 4, 146, 0.1), 0px 24px 60px rgba(6, 47, 125, 0.05), 0px 12px 24px rgba(27, 59, 119, 0.05);
+    border-radius: 0px 0px 16px 16px;
+}
+
+.card-gift h3
+{
+    padding-top: 22px;
+    color: rgb(241,230,224);
+}
+
+.card-gift .price
+{
+    margin-bottom: 22px;
+    font-weight: 700;
+}
+
+.card-gift .price strong {
+    font-size: 2rem;
+}
+
+.btn
+{
+    margin-top: 22px;
+    margin-bottom: 22px;
+}

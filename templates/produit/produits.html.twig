@@ -7,19 +7,19 @@
 
 
 	{#	<div class="example-wrapper">
-																																																				<h1>Page tous les produits ✅</h1>
-																																																		
-																																																					{% for produit in produits %}
-																																																				
-																																																							<h3>{{produit.nom}}</h3>
-																																																							<img src="/uploads/{{produit.photo}}">
-																																																							<p>{{produit.descriptif | raw}}</p>
-																																																							<a href=" {{path('produitdetails', {'id':produit.id} )}}">Voir le details du produit</a>
-																																																						</br>
-																																																						<div class="btn btn-primary btn-ajouter" data-name="{{produit.nom}}" data-content="{{produit.descriptif}}" data-img="{{produit.photo}}">Ajouter au panier</div>
-																																																					{% endfor %} 
-																																																			</div>
-																																																			<div class="example-wrapper"></div> #}
+																																																													<h1>Page tous les produits ✅</h1>
+																																																											
+																																																														{% for produit in produits %}
+																																																													
+																																																																<h3>{{produit.nom}}</h3>
+																																																																<img src="/uploads/{{produit.photo}}">
+																																																																<p>{{produit.descriptif | raw}}</p>
+																																																																<a href=" {{path('produitdetails', {'id':produit.id} )}}">Voir le details du produit</a>
+																																																															</br>
+																																																															<div class="btn btn-primary btn-ajouter" data-name="{{produit.nom}}" data-content="{{produit.descriptif}}" data-img="{{produit.photo}}">Ajouter au panier</div>
+																																																														{% endfor %} 
+																																																												</div>
+																																																												<div class="example-wrapper"></div> #}
 
 	<head>
 		<meta charset="UTF-8">
@@ -38,60 +38,6 @@
 	</head>
 
 	<body>
-		<header>
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-12">
-						<nav class="navbar navbar-expand-xxl">
-							<div class="container-fluid">
-								<a class="navbar-brand" href="#"><img src="images/logo/logo_bric_et_broc-187x43.svg" alt="" width="187" height="54" class="d-inline-block align-text-top"></a>
-								<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-									<span class="navbar-toggler-icon"></span>
-								</button>
-								<div class="collapse navbar-collapse justify-content-xxl-center" id="navbarNav">
-									<ul class="navbar-nav">
-										<li class="nav-item">
-											<a class="nav-link" href="#">Home</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Nos Jouets</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Abonnement</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Offrir</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Don</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Coup de pouce?</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Notre Blog</a>
-										</li>
-									</ul>
-								</div>
-								<div>
-									<a class="navbar-brand" href="#">
-										<img src="images/icons/icon_mon_compte_20x18.svg" alt="" width="24" height="24">
-									</a>
-									<a class="navbar-brand" href="#">
-										<img src="images/icons/icon_search_17x17.svg" alt="" width="24" height="24">
-									</a>
-									<a class="navbar-brand" href="#">
-										<img src="images/icons/icon_panier_16x18.svg" alt="" width="24" height="24">
-									</a>
-								</div>
-							</div>
-						</nav>
-
-					</div>
-				</div>
-			</div>
-
-		</header>
 
 		<section id="tous-lesjouets">
 			<div class="container">
@@ -178,7 +124,7 @@
 											<img src="/uploads/{{produit.photo}}" class="card-img-top">
 											<div class="card-body">
 												<h3>{{produit.nom}}</h3>
-												<p>{{produit.descriptif | raw}}</p>
+												{#	<p>{{produit.descriptif | raw}}</p>#}
 												<a href=" {{path('produitdetails', {'id':produit.id} )}}">Voir le details du produit</a>
 											</br>
 											<div class="btn btn-primary btn-ajouter" data-name="{{produit.nom}}" data-content="{{produit.descriptif}}" data-img="{{produit.photo}}">Ajouter au panier</div>
@@ -193,81 +139,6 @@
 					</section>
 
 
-					<footer class="bg-image">
-						<div class="container container-xxl">
-							<div class="row">
-								<div class="col-12 text-center">
-									<img id="logo-footer" src="images/logo/logo_bric_et_broc-187x43.svg" alt="">
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-3 text-end">
-									<label for="newsletter">Newsletter</label>
-								</div>
-								<div class="col-9">
-									<div class="input-group">
-										<input name="newsletter" id="newsletter" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-										<button class="btn btn-outline-secondary" type="button" id="button-addon2">S'inscrire</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="reseaux-footer text-center">
-									<a class="navbar-brand" href="#">
-										<img src="images/icons/reseau_sociaux/icon_twitter_457x425.svg" alt="" width="24" height="24">
-									</a>
-									<a class="navbar-brand" href="#">
-										<img src="images/icons/reseau_sociaux/instagram_522x425.svg" alt="" width="24" height="24">
-									</a>
-									<a class="navbar-brand" href="#">
-										<img src="images/icons/reseau_sociaux/facebook_522x425.svg" alt="" width="24" height="24">
-									</a>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-12 text-center">
-									<span>Contact:</span>
-									<a href="mailto:#">bricetbroc@contact.com</a>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-4 text-end">
-									<a href="#">Notre Concept</a>
-									<br>
-									<a href="#">Nos Valeurs</a>
-								</div>
-								<div class="col-4 text-center">
-									<a href="#">Faire un don</a>
-									<br>
-									<a href="#">FAQ</a>
-								</div>
-								<div class="col-4 text-start">
-									<a href="#">Livraison</a>
-									<br>
-									<a href="#">Mode de paiment</a>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-3 text-end">
-									<a href="#">© 2021 Lorem Ipsum lorem</a>
-								</div>
-								<div class="col-3 text-center">
-									<a href="#">CGU</a>
-								</div>
-								<div class="col-3 text-start">
-									<a href="#">CGV</a>
-								</div>
-								<div class="col-3 text-start">
-									<a href="#">Gestion des cookies</a>
-								</div>
-							</div>
-
-						</div>
-					</div>
 				</body>
 			</footer><!-- JavaScript Bundle with Popper --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		{% endblock %}

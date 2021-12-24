@@ -1,21 +1,133 @@
-/*.html
-{
-font-size: 62.5%;
-} */
 
-/* 
-couleur primaire : #EB9F4A
-couleurs secondaires: 
-#84B0A0
-#DA7F57
-#C95F63
-couleurs de fond: 
-#F1E6E0
-#FFFFFF
-couleur texte:
-#0A0D22 
+html
+{
 font-family: 'Poppins', sans-serif;
-*/
+}
+
+/* couleur primaire: Jaune 
+#EB9F4A
+rgb(235,159,74)
+couleurs secondaires: Vert, Orange, Rouge 
+#84B0A0
+rgb(132,176,160)
+#DA7F57
+rgb(218,127,87)
+#C95F63
+rgb(201,95,99)
+couleurs de fond: Beige, Blanc 
+#F1E6E0
+rgb(241,230,224)
+#FFFEFD
+rgb(255,254,253)
+couleur texte: Noir
+#0A0D22
+rgb(10,13,34) */
+
+
+/* -------------------------------
+CSS pour nav_desktop_header
+---------------------------------*/
+
+/* --------------------------
+ mobile < 1400px 
+-----------------------------*/
+
+.bb__navbar.navbar-light .navbar-toggler {
+ border: 0;
+}
+
+.bb__navbar>div {
+    display:flex;
+}
+
+
+.bb__navbar .navbar-collapse-lg {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    padding: 100px;
+    background-color: white;
+    width: 100vw;
+}
+
+/* --------------------------
+ Desktop > 1400px
+-----------------------------*/
+
+.bb__navbar.navbar-light .navbar-nav .nav-link {
+    color:#000;
+}
+
+.bb__navbar a {
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+.bb__navbar .nav-item {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+}
+
+.bb__navbar .nav-item.active {
+    background-color: #EB9F4A;
+}
+
+
+/* -------------------------------
+CSS pour NAV NEW VERSION
+---------------------------------*/
+:root {
+    --navbar-background-color: #f2f2f2;
+    --navbar-background-color:#ececec;
+    }
+    
+
+    .navbar {
+        width: 119rem;
+        box-shadow: rgba(12,43,30,0.2)0 4px 14px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: rgb(235,159,74);
+        width: 100%;
+    }
+    
+    
+    
+    
+    .uli  {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:space-around;
+        text-decoration: none;
+        list-style: none;
+        color: rgb(235,159,74);
+        
+    }
+    
+    .icon-navbar
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style: none;
+        margin-left: 88px;
+    }
+
+    .icon-search
+    {
+        margin-left: 88px;
+    }
+    
+    
+    .btn1:hover,.btn2:hover,.btn3:hover,.btn4:hover,.btn5:hover,.btn6:hover{
+    color: rgb(10,13,34)
+    }
+
 
 
 /* -----------------------
@@ -24,35 +136,14 @@ CSS pour nav_annonce
 
 .annonce
 {
-    font-family: 'Poppins', sans-serif;
     font-size:1.5rem;
     text-align: center;
-    color: #FFF;
-    background-color: #C95F63;
+    color: rgb(255,254,253);
+    background-color: rgb(201,95,99);
 }
 
 .annonce #noel
 {
     font-weight: 600;
 }
-
-
-/* -------------------------------
-CSS pour nav_desktop_header
----------------------------------*/
-#navbarNav
-{
-    color: #000; /* COMMENT CHANGER LA COULEUR */
-}
-
-
-
-
-/* -------------------------------
-CSS pour header_desktop
----------------------------------*/
-
-
-
-
 

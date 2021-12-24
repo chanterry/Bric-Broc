@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.logo {
+  margin-left: 20px;
+}
+.rubrique li {
+  padding: 50px;
+}
+
+nav li {
+  display: inline;
+  padding: 20px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+}
+
+.rubrique li a:hover {
+  background-color: #eb9f4a;
+}

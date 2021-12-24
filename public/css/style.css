@@ -1,9 +1,9 @@
 /* style CSS hors nav, card ou form */
 
-/*.html
+html
 {
-font-size: 62.5%;
-} */
+font-family: 'Poppins', sans-serif;
+}
 
 /* couleur primaire: Jaune 
 #EB9F4A
@@ -28,6 +28,7 @@ rgb(10,13,34) */
 /* -----------------------
 CSS SECTION HEADER 
 ------------------------*/
+
 .fond-card-header
 {
     background-color: rgb(241,230,224);
@@ -43,32 +44,92 @@ CSS SECTION NOS BOX
     margin-bottom: 88px;
 }
 
+#nos-box .h2
+{
+    position: relative;
+    z-index: 21;
+    font-weight: 700;
+}
+
+.form-geometric
+{
+    margin-top: -71px;
+}
+
+#nos-box .h3
+{
+    font-weight: 600;
+}
+
+
+/* -----------------------------
+CSS SECTION NOS CARTES CADEAUX 
+-------------------------------*/
+#gift
+{
+    margin-top: 88px;
+    margin-bottom: 88px;
+}
+
 h2
 {
     position: relative;
     z-index: 21;
 }
 
-.form-geometric
-{
-    transform: rotate(32.97deg);
-    margin-top: -176px;
+#gift h2{
+    background-image: url(../images/geometrie/triangle93x101.png);
+    background-position: center 65px;;
+    background-repeat: no-repeat;
+    padding-bottom: 70px;
+    padding-top: 93px;
+    font-weight: 700;     
 }
-
 
 /* -----------------------
 CSS SECTION CONCEPT (comment ça marche?) 
 -------------------------*/
-#concept
-{
+#flex-ccm{
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+}
+
+.card-icone img{
+    padding-top: 28px;
+}
+
+#concept{
     background: rgb(241,230,224);
-    padding-top: 88px;
+    padding-top: 32px;
     padding-bottom: 88px;
 }
 
-#concept .btn
-{
+#concept .btn{
     margin-top: 44px;
+}
+
+
+#concept h2{
+    background-image: url(../images/geometrie/rectangle141x95.png);
+    background-position: center 65px;;
+    background-repeat: no-repeat;
+    padding-bottom: 70px;
+    padding-top: 93px;
+    font-weight: 700;     
+}
+
+#profiter h3{
+margin-top: 52px;
+}
+
+#profiter img{
+    margin-top: 4px;
+}
+
+#recommander h3{
+        margin-top: 36px;
+       
 }
 
 
@@ -78,8 +139,18 @@ CSS SECTION CATEGORIES
 -------------------------*/
 #categories
 {
-    margin-top: 88px;
-    margin-bottom: 88px;
+    margin-top: 44px;
+    margin-bottom: 136px;
+}
+
+#categories h2
+{
+    background-image: url(../images/geometrie/disque-87x87.png);
+    background-position: center 55px;;
+    background-repeat: no-repeat;
+    padding-bottom: 70px;
+    padding-top: 70px;
+    font-weight: 700;
 }
 
 
@@ -89,9 +160,19 @@ CSS SECTION NOUVEAUTES
 -------------------------*/
 #nouveautes
 {
-    padding-top: 88px;
+    padding-top: 44px;
     padding-bottom: 88px;
     background-color: rgb(241,230,224);
+}
+
+#nouveautes h2
+{
+    background-image: url(../images/geometrie/carré.png);
+    background-position: center 32px;;
+    background-repeat: no-repeat;
+    padding-bottom: 88px;
+    padding-top: 74px;
+    font-weight: 700;
 }
 
 
@@ -100,17 +181,33 @@ CSS SECTION NOS VALEURS
 -------------------------*/
 #nosvaleurs
 {
-    margin-top: 88px;
+    margin-top: 44px;
     margin-bottom: 88px;
 }
 
+#nosvaleurs h3 {
+    padding-top:  20px;
+    font-weight: 700;
+}
+
+
+#nosvaleurs h2 {
+    background-image: url(../images/geometrie/lune153x142.png);
+    background-position: center 45px;;
+    background-repeat: no-repeat;
+    padding-bottom: 88px;
+    padding-top: 88px;
+    font-weight: 700;
+    
+    
+}
 
 /* -----------------------
 CSS SECTION DON DE JOUET
 -------------------------*/
 #dondejouet
 {
-    background-image: url(../images/img_fond_section1440x623.jpg);
+    background-image: url(../images/fond_section1440x623.jpg);
     background-repeat: no-repeat;
     background-position:center top;
     background-size: cover;
@@ -142,20 +239,283 @@ h2
     margin-top: -44px;
 }
 
+/* -----------------------
+CSS SECTION TEMOIGNAGES
+-------------------------*/
+#temoignages
+{
+    margin-top: 132px;
+    margin-bottom: 132px;
+}
 
 
 
 /* -----------------------
 CSS SECTION FOOTER 
 -------------------------*/
+/*mobile*/
+.bb__footer {
+    max-width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.bb__footer a {
+    color:#000;
+    text-decoration: none;
+}
 
 footer
 {
     padding-top: 130px;
-    background-image: url(../images/img_fond_footer.jpg);
+    background-image: url(../images/fond_footer.jpg);
     background-repeat: no-repeat;
     background-position:center top;
     background-size: cover;
 }
 
+.footer__logo {margin-bottom: 67px;max-width: 100%;}
 
+.footer__form {margin: 0 auto 27px;display: flex;justify-content: center;font-size: 14px;}
+
+.footer__form label{
+    color: #C95F63;
+}
+
+.footer__form button {
+    background: transparent;
+    border: 0;
+    color:#EB9F4A;
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer__form input {
+    max-height: 25px;
+    border-radius: 0;
+    max-width: 218px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #84B0A0;
+    font-size: 16px;
+}
+
+.footer__contact {
+    color:#EB9F4A;
+    text-align: center;
+    font-size: 16px;
+}
+
+.footer__form, 
+.footer__form label,
+.footer__form button .newsletter {
+    font-size: 16px;
+}
+
+.footer__contact {max-width: 100%;margin: 30px auto;padding-bottom: 36px;margin-bottom: 20px;border-bottom: 2px solid #EB9F4A;box-sizing: border-box;}
+
+.footer__section {max-width: 100%;padding-bottom: 24px;margin: 0 auto;margin-bottom: 42px;border-bottom: 2px solid #84B0A0;}
+
+.footer__sub {padding-bottom: 47px;max-width: 100%;}
+
+
+/* desktop */
+@media screen and (min-width:1400px) {
+    .bb__footer {
+        font-size: 18px;
+    }
+
+    .footer__form input {
+        max-width: 190px;
+    }
+
+}
+
+/* -----------------------
+CSS SECTION PAGE CATEGORIE
+------------------------*/
+
+#tous-lesjouets .card-product
+{
+    margin-top: 44px;
+    margin-bottom: 44px;
+}
+
+#filtre{
+    height: 1230px;
+    border: 1px solid #CEC9C9;
+    border-radius: 15px;
+    padding-top: 30px;
+    padding-left:30px;
+    margin-top: 44px;
+    
+    }
+    
+    #choix{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    
+    
+    }
+    
+    #filtre h3{
+    color: #EB9F4A;
+    
+    }
+    
+    .titrefiltre{
+    margin-top: 15px;
+    
+    }
+
+/* -----------------------
+CSS SECTION PAGE CATEGORIE
+------------------------*/
+#fiche_produit article
+{
+    margin-top: 88px;
+}
+
+#fiche_produit .caroussel img {
+    border: 1px solid #e4e2e1;
+    box-shadow: 0px 4px 17px #f3EDE9;
+}
+
+#fiche_produit h3{
+    font-weight: 700;
+    
+    }
+
+#fiche_produit ul {
+    padding: 0;
+}
+#fiche_produit ul > li{
+    list-style: none;
+    padding-left: 50px;
+    position: relative;
+    margin-bottom: 10px;
+}   
+
+#fiche_produit ul > li::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 12px;
+    border-radius: 50%;
+    /*box-shadow: 0px 4px 17px #7a6b60;*/
+
+}
+#fiche_produit ul > li.icon-eco::before{
+    background: url('../images/icons/valeurs-jouet/icon-eco.png');
+    background-position: center;
+    background-size: cover;
+}
+#fiche_produit ul > li.icon-glue::before{
+    background: url('../images/icons/valeurs-jouet/icon-glue.png');
+    background-position: center;
+    background-size: cover;
+}
+#fiche_produit ul > li.icon-natural::before{
+    background: url('../images/icons/valeurs-jouet/icon-natural.png');
+    background-position: center;
+    background-size: cover;
+}
+#fiche_produit ul > li.icon-wood::before{
+    background: url('../images/icons/valeurs-jouet/icon-wood.png');
+    background-position: center;
+    background-size: cover;
+}
+
+
+/*#fil{
+padding-top: 38px;
+padding-bottom: 38px;
+height: 96px;
+
+}
+
+#fil p{
+color: #84B0A0;
+} */
+
+.artible-body
+{
+    margin-left: 88px;
+}
+
+
+.descriptif{
+
+margin-top: 45px;
+margin-bottom: 55px;
+
+}
+
+/*.btn .btn-primary{
+
+border-radius: 15px;
+}
+
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #ECA04A !important;
+}*/
+
+#dispo{
+margin-top:38px;
+
+
+}
+
+#avantages{
+border: 1px solid #F3EDE9;
+box-shadow: 0px 4px 17px #f3EDE9;
+margin-top: 88px;
+margin-bottom: 20px;
+padding-top: 20px;
+padding-bottom: 20px;
+border-radius: 15px;
+width: 75%;
+margin-left: 220px;
+
+}
+
+#icon{
+    height: 30px;
+}
+
+/*.point-avantage{
+text-align: center;
+}*/
+
+#autres_produits{
+margin-top: 130px;
+margin-bottom: 130px;
+text-align: center;
+
+
+}
+
+#autres_produits h2{
+    background-image: url(../images/geometrie/rectangle141x95.png);
+    background-position: center 65px;;
+    background-repeat: no-repeat;
+    padding-bottom: 70px;
+    padding-top: 93px;
+    font-weight: bold;     
+}
+
+
+
+
+
+#fil{
+    padding-top: 38px;
+    height: 20px;
+    
+    }
+    
+    #fil p{
+    color: #84B0A0;
+    }
