@@ -23,33 +23,31 @@
 
 	{% block title %}{% endblock %}
 
-	{% block header %}{% endblock %}
-
 
 	{#	<div class="example-wrapper">
-													<h1>Hello choose your box</h1>
-											
-													<a data-href="{{path('produit')}}" data-value="4" class="box">Box 4 produits</a>
-													<a data-href="{{path('produit')}}" data-value="7" class="box">Box 7 produits</a>
-													<a data-href="{{path('produit')}}" data-value="10" class="box">Box 10 produits</a>
-												</div>
-											
-												<div class="example-wrapper">
-													<h1>Categories</h1>
-													{% for category in categoryList %}
-											
-														<h3>{{category.typedejouet}}</h3>
-											
-													{% endfor %}
-												</div>
-											
-												<div class="example-wrapper">
-													<h1>Nouveautés</h1>
-													{% for produit in produitList %}
-											
-														<h3>{{produit.nom}}</h3>
-											
-													{% endfor %} #}
+														<h1>Hello choose your box</h1>
+												
+														<a data-href="{{path('produit')}}" data-value="4" class="box">Box 4 produits</a>
+														<a data-href="{{path('produit')}}" data-value="7" class="box">Box 7 produits</a>
+														<a data-href="{{path('produit')}}" data-value="10" class="box">Box 10 produits</a>
+													</div>
+												
+													<div class="example-wrapper">
+														<h1>Categories</h1>
+														{% for category in categoryList %}
+												
+															<h3>{{category.typedejouet}}</h3>
+												
+														{% endfor %}
+													</div>
+												
+													<div class="example-wrapper">
+														<h1>Nouveautés</h1>
+														{% for produit in produitList %}
+												
+															<h3>{{produit.nom}}</h3>
+												
+														{% endfor %} #}
 
 
 	<body>
