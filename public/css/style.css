@@ -149,7 +149,7 @@ CSS SECTION NOUVEAUTES
   background-image: url(../images/geometrie/carré.png);
   background-position: center 32px;
   background-repeat: no-repeat;
-  padding-bottom: 88px;
+  padding-bottom: 0px;
   padding-top: 74px;
   font-weight: 700;
 }
@@ -180,7 +180,7 @@ CSS SECTION NOS VALEURS
 CSS SECTION DON DE JOUET
 -------------------------*/
 #dondejouet {
-  background-image: url(../images/fond_section1440x623.jpg);
+  background-image: url(../images/img_fond_section1440x623.jpg);
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -234,7 +234,7 @@ CSS SECTION FOOTER
 
 footer {
   padding-top: 130px;
-  background-image: url(../images/fond_footer.jpg);
+  background-image: url(../images/img_fond_footer.jpg);
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -417,7 +417,7 @@ height: 96px;
 color: #84B0A0;
 } */
 
-.artible-body {
+.article-body {
   margin-left: 88px;
 }
 
@@ -472,7 +472,7 @@ text-align: center;
   background-repeat: no-repeat;
   padding-bottom: 70px;
   padding-top: 93px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 #fil {
