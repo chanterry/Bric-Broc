@@ -5,20 +5,20 @@
 
 {% block body %}
 	{#	<h1>Page details ✅</h1>
-												
-													<h2>{{details.nom}}</h2>
-													<img src="/uploads/{{details.photo}}">
-													<h3>Descriptif</h3>
-													<p>{{details.descriptif | raw}}</p>
-												</br>
-												<p>{{details.marque}}</p>
-												<button type="submit" data-name="{{details.nom}}" data-content="{{details.descriptif}}" data-img="{{details.photo}}" class="btn-ajouter">Ajouter au panier</button>
-												#}
+																
+																	<h2>{{details.nom}}</h2>
+																	<img src="/uploads/{{details.photo}}">
+																	<h3>Descriptif</h3>
+																	<p>{{details.descriptif | raw}}</p>
+																</br>
+																<p>{{details.marque}}</p>
+																<button type="submit" data-name="{{details.nom}}" data-content="{{details.descriptif}}" data-img="{{details.photo}}" class="btn-ajouter">Ajouter au panier</button>
+																#}
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{details.nom}}</title>
+		<title>Fiche produits</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link
@@ -26,8 +26,9 @@
 		<!-- CSS only -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-		<link rel="stylesheet" href="public/css/card.css">
-		<link rel="stylesheet" href="public/css/style.css">
+		<link rel="stylesheet" href="css/card.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/nav.css">
 	</head>
 
 
@@ -40,22 +41,21 @@
 					class="caroussel col-12 col-md-6">
 
 					<!--IMAGE DU CAROUSSEL -->
-					<img
-					src="/uploads/{{details.photo}}" class="d-block img-fluid" alt="...">
+					<img src="/uploads/{{details.photo}}" class="d-block img-fluid" alt="...">
 
-					<!-- IMAGES DE LA GALLERIE -->
-					<div class="row mt-3 d-none d-md-flex">
-						<div class="col-4">
-							<img src="images/jouets/page_produit/xylophone_mini1.png" class="imgproduit img-fluid" alt="...">
-						</div>
-
-						<div class="col-4">
-							<img src="images/jouets/page_produit/xylophone_mini2.png" class="imgproduit img-fluid" alt="...">
-						</div>
-						<div class="col-4">
-							<img src="images/jouets/page_produit/xylophone_mini3.png" class="imgproduit img-fluid" alt="...">
-						</div>
-					</div>
+				<!-- IMAGES DE LA GALLERIE -->
+					{#<div class="row mt-3 d-none d-md-flex">
+											<div class="col-4">
+												<img src="images/jouets/page_produit/xylophone_mini1.png" class="imgproduit img-fluid" alt="...">
+											</div>
+					
+											<div class="col-4">
+												<img src="images/jouets/page_produit/xylophone_mini2.png" class="imgproduit img-fluid" alt="...">
+											</div>
+											<div class="col-4">
+												<img src="images/jouets/page_produit/xylophone_mini3.png" class="imgproduit img-fluid" alt="...">
+											</div>
+										</div>#}
 				</article>
 
 				<article class="col-12 col-md-6">

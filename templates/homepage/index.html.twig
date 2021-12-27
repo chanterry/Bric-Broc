@@ -1,433 +1,709 @@
 {% extends 'base.html.twig' %}
-
-{% block stylesheets %}
-	<link rel="stylesheet" href="/css/card.css">
-	<link rel="stylesheet" href="/css/style.css">
-{% endblock %}
-
-{% block title %}Homepage
-{% endblock %}
-
-{% block header %}{% endblock %}
-
 {% block body %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
 
-	<div class="example-wrapper">
-		<h1>Hello choose your box</h1>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Tous nos Jouets</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<!-- CSS only -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/nav.css">
+		<link rel="stylesheet" href="css/card.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/caroussel.css">
+	</head>
 
-		<a data-href="{{path('produit')}}" data-value="4" class="box">Box 4 produits</a>
-		<a data-href="{{path('produit')}}" data-value="7" class="box">Box 7 produits</a>
-		<a data-href="{{path('produit')}}" data-value="10" class="box">Box 10 produits</a>
-	</div>
 
-	<div class="example-wrapper">
-		<h1>Categories</h1>
-		{% for category in categoryList %}
+	{% block stylesheets %}{% endblock %}
 
-			<h3>{{category.typedejouet}}</h3>
+	{% block title %}{% endblock %}
 
-		{% endfor %}
-	</div>
+	{% block header %}{% endblock %}
 
-	<div class="example-wrapper">
-		<h1>Nouveautés</h1>
-		{% for produit in produitList %}
 
-			<h3>{{produit.nom}}</h3>
+	{#	<div class="example-wrapper">
+					<h1>Hello choose your box</h1>
+			
+					<a data-href="{{path('produit')}}" data-value="4" class="box">Box 4 produits</a>
+					<a data-href="{{path('produit')}}" data-value="7" class="box">Box 7 produits</a>
+					<a data-href="{{path('produit')}}" data-value="10" class="box">Box 10 produits</a>
+				</div>
+			
+				<div class="example-wrapper">
+					<h1>Categories</h1>
+					{% for category in categoryList %}
+			
+						<h3>{{category.typedejouet}}</h3>
+			
+					{% endfor %}
+				</div>
+			
+				<div class="example-wrapper">
+					<h1>Nouveautés</h1>
+					{% for produit in produitList %}
+			
+						<h3>{{produit.nom}}</h3>
+			
+					{% endfor %} #}
 
-		{% endfor %}
-	</div>
 
-	<header>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-12">
-					<nav class="navbar navbar-expand-xxl">
-						<div class="container-fluid">
-							<a class="navbar-brand" href="#"><img src="images/logo_bric_et_broc_187x30.svg" alt="" width="187" height="54" class="d-inline-block align-text-top"></a>
-							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-								<span class="navbar-toggler-icon"></span>
-							</button>
-							<div class="collapse navbar-collapse justify-content-xxl-center" id="navbarNav">
-								<ul class="navbar-nav">
-									<li class="nav-item">
-										<a class="nav-link" href="#">Home</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="#">Nos Jouets</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="#">Abonnement</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="#">Offrir</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="#">Don</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="#">Coup de pouce?</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="#">Notre Blog</a>
-									</li>
-								</ul>
-							</div>
-							<div>
-								<a class="navbar-brand" href="#">
-									<img src="images/icon_mon_compte_20x18.svg" alt="" width="24" height="24">
-								</a>
-								<div class="navbar-brand">
-									<img src="images/icon_search_17x17.svg" id="icon_search" alt="" width="24" height="24">
-								</div>
+	<body>
+		<div class="modal"></div>
 
-								<div class="navbar-brand">
 
-									<div class="searchBar" id="root" style="display: none"></div>
+		<div class="row">
+			<div class="col-12 annonce">
+				<span>
+					Bénéficiez de -10% sur nos boxs avec le code
+					<span id="noel">NOEL21</span>
+				</span>
+			</div>
+		</div>
 
-									<img src="images/icon_panier_16x18.svg" alt="" width="24" height="24">
+		<div class="fond-card-header">
+			<div id="carouselExampleIndicators" class="bb__carousel carousel slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<div class="card-header">
+							<div class="container">
+								<div class="row justify-content-center">
+									<div class="col-sm-12 col-md-5 text-center">
+										<img class="logo-header" src="images/logo/logo_bric_et_broc-588x110.svg" alt="">
+										<span class="tag-action tag-louez">Louez des jouets</span>
+										<p class="tag-line">Pour le bonheur de vos enfants&nbsp;!</p>
+										<button type="button" class="btn btn-primary col-12 col-xl-4 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Abonnement</button>
+									</div>
+									<div class="d-none d-xxl-block col-5 offset-2 text-center">
+										<img src="images/header/header1-396x504.png" width="399" class="d-block" alt="...">
+									</div>
 								</div>
 							</div>
 						</div>
-					</nav>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-12 annonce">
-					<span>
-						Bénéficiez de -10% sur nos boxs avec le code
-						<span id="noel">NOEL21</span>
-					</span>
-				</div>
-			</div>
-			<div class="row fond-card-header justify-content-center">
-				<div class="col-10 card-header">
-					<div class="container">
-						<div class="row justify-content-center">
-							<div class="col-5 text-center">
-								<img class="logo-header" src="images/logo_bric_et_broc_570x88.svg" alt="">
-								<span class="tag-action">Louez des jouets</span>
-								<p class="tag-line">Pour le plus grand bonheur de vos enfants&nbsp;!</p>
-								<button type="button" class="btn btn-primary col-4 mx-auto">Abonnement</button>
+					</div>
+					<div class="carousel-item">
+						<div class="card-header">
+							<div class="container">
+								<div class="row justify-content-center">
+									<div class="col-sm-12 col-md-5 text-center">
+										<img class="logo-header" src="images/logo/logo_bric_et_broc-588x110.svg" alt="">
+										<span class="tag-action tag-libérez">Libérez sa créativité</span>
+										<p class="tag-line">Emballages 100% ludiques</p>
+										<button type="button" class="btn btn-primary col-12 col-xl-4 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Abonnement</button>
+									</div>
+									<div class="d-none d-xxl-block col-5 offset-2 text-center">
+										<img src="images/header/header2-570x606.png" width="379" class="d-block w-100" alt="...">
+									</div>
+								</div>
 							</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="card-header">
+							<div class="container">
+								<div class="row justify-content-center">
+									<div class="col-sm-12 col-md-5 text-center">
+										<img class="logo-header" src="images/logo/logo_bric_et_broc-588x110.svg" alt="">
+										<span class="tag-action tag-plaisir">Faites leurs plaisir</span>
+										<p class="tag-line">Achetez moins mes jouez mieux&nbsp;!</p>
+										<button type="button" class="btn btn-primary col-12 col-xl-4 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Abonnement</button>
+									</div>
+									<div class="d-none d-xxl-block col-5 offset-2 text-center">
+										<img src="images/header/header3-531x558.png" width="379" class="d-block w-100" alt="...">
+									</div>
+								</div>
+							</div>
+						</div>
 
-							<div class="col-5 offset-2 text-center">
-								<img class="logo-header" src="images/img_fond_B.png" alt="">
+					</div>
+					<div class="carousel-item">
+						<div class="card-header">
+							<div class="container">
+								<div class="row justify-content-center">
+									<div class="col-sm-12 col-md-5 text-center">
+										<img class="logo-header" src="images/logo/logo_bric_et_broc-588x110.svg" alt="">
+										<span class="tag-action tag-jouets">Plus de 600 jouets</span>
+										<p class="tag-line">Découvrez nos nouveautés&nbsp;!</p>
+										<button type="button" class="btn btn-primary col-12 col-xl-4 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Abonnement</button>
+									</div>
+									<div class="d-none d-xxl-block col-5 offset-2 text-center">
+										<img src="images/header/header4-517x561.png" width="379" class="d-block w-100" alt="...">
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
 			</div>
 		</div>
-	</header>
 
-	<section id="nos-box">
-		<div class="container container-xxl">
-			<div class="row">
-				<div class="col text-center">
-					<h2>Nos Box</h2>
-					<img class="form-geometric" src="../images/triangle.png" alt="">
+		<!-- SECTION NOS BOX -->
+		<section id="nos-box">
+			<div class="container container-xxl">
+				<div class="row">
+					<div class="col text-center">
+						<h2>Nos Box</h2>
+						<img class="form-geometric" src="images/geometrie/triangle93x101.png" alt="">
+
+					</div>
+
 				</div>
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-xl">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="row justify-content-center">
+									<div class="card-box col-md-4 col-lg-3 text-center">
+										<h2>Bric</h2>
+										<img class="img-box" src="images/nos_box/4jouets_281x285.jpg" alt="">
+										<div class="box-description couleur-box4">
+											<h3>Box 4 jouets</h3>
+											<p class="price">
+												<strong>19,99</strong>€/mois</p>
+											<p class="d-none d-xl-block">Découvrez et louez de nouveaux jouets en les ajoutant dans votre box.</p>
+											<div class="d-grid">
+												<a data-href="{{path('produit')}}" data-value="4" class="box">je m'abonne</a>
+											</div>
+
+										</div>
+									</div>
+									<div class="card-box col-md-4 col-lg-3 text-center">
+										<h2>Broc</h2>
+										<img class="img-box" src="images/nos_box/7jouets_281x285.jpg" alt="">
+										<div class="box-description couleur-box7">
+											<h3>Box 7 jouets</h3>
+											<p class="price">
+												<strong>29,99</strong>€/mois</p>
+											<p class="d-none d-xl-block">Découvrez et louez de nouveaux jouets en les ajoutant dans votre box.</p>
+											<div class="d-grid">
+												<a data-href="{{path('produit')}}" data-value="7" class="box">Box 7 produits</a>
+											</div>
+
+										</div>
+									</div>
+									<div class="card-box col-md-4 col-lg-3 text-center">
+										<h2>Bric & Broc</h2>
+										<img class="img-box" src="images/nos_box/10jouets_281x285.jpg" alt="">
+										<div class="box-description couleur-box10">
+											<h3>Box 10 jouets</h3>
+											<p class="price">
+												<strong>39,99</strong>€/mois</p>
+											<p class="d-none d-xl-block">Découvrez et louez de nouveaux jouets en les ajoutant dans votre box.</p>
+											<p>
+												<div class="d-grid">
+													<button type="button" class="btn btn-primary">je m'abonne</button>
+												</div>
+											</p>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="card-box col-md-4 col-lg-3 text-center">
+						<h2>Bric</h2>
+						<img class="img-box" src="images/nos_box/4jouets_281x285.jpg" alt="">
+						<div class="box-description couleur-box4">
+							<h3>Box 4 jouets</h3>
+							<p class="price">
+								<strong>19,99</strong>€/mois</p>
+							<p class="d-none d-xl-block">Découvrez et louez de nouveaux jouets en les ajoutant dans votre box.</p>
+							<div class="d-grid">
+								<a data-href="{{path('produit')}}" data-value="4" class="box btn btn-primary">je m'abonne</a>
+							</div>
+						</div>
+					</div>
+					<div class="card-box col-md-4 col-lg-3 text-center">
+						<h2>Broc</h2>
+						<img class="img-box" src="images/nos_box/7jouets_281x285.jpg" alt="">
+						<div class="box-description couleur-box7">
+							<h3>Box 7 jouets</h3>
+							<p class="price">
+								<strong>29,99</strong>€/mois</p>
+							<p class="d-none d-xl-block">Découvrez et louez de nouveaux jouets en les ajoutant dans votre box.</p>
+							<div class="d-grid">
+								<a data-href="{{path('produit')}}" data-value="4" class="box btn btn-primary">je m'abonne</a>
+							</div>
+
+						</div>
+					</div>
+					<div class="card-box col-md-4 col-lg-3 text-center">
+						<h2>Bric & Broc</h2>
+						<img class="img-box" src="images/nos_box/10jouets_281x285.jpg" alt="">
+						<div class="box-description couleur-box10">
+							<h3>Box 10 jouets</h3>
+							<p class="price">
+								<strong>39,99</strong>€/mois</p>
+							<p class="d-none d-xl-block">Découvrez et louez de nouveaux jouets en les ajoutant dans votre box.</p>
+							<p>
+								<div class="d-grid">
+									<a data-href="{{path('produit')}}" data-value="4" class="box btn btn-primary">je m'abonne</a>
+								</div>
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</body>
+	</body>
+</section>
+
+<!-- SECTION CONCEPT (comment ça marche?) -->
+<section id="concept">
+	<div class="container container-xxl">
+		<div class="row">
+			<div class="col text-center">
+				<h2>Comment ça marche ?</h2>
 
 			</div>
+
+		</div>
+
+		<div class="row">
+
 			<div class="row justify-content-center">
-				<div class="card-box col-3 text-center">
-					<h2>Bric</h2>
-					<img class="img-box" src="../images/img281x285_site_1.jpg" alt="">
-					<div class="box-description">
-						<h3>Box 4 jouets</h3>
-						<p class="price">19,99 € / m.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						<a href="{{path('produit')}}" data-value="4" class="box">Je m'abonne</a>
-					</div>
-				</div>
+				<div class="col-12 col-lg-3 text-center">
 
-				<div class="card-box col-3 text-center">
-					<h2>Bric</h2>
-					<img class="img-box" src="../images/img281x285_site_1.jpg" alt="">
-					<div class="box-description">
-						<h3>Box 4 jouets</h3>
-						<p class="price">19,99 € / m.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						<a href="{{path('produit')}}" data-value="7" class="box">Je m'abonne</a>
-					</div>
-				</div>
-
-				<div class="card-box col-3 text-center">
-					<h2>Bric</h2>
-					<img class="img-box" src="../images/img281x285_site_1.jpg" alt="">
-					<div class="box-description">
-						<h3>Box 4 jouets</h3>
-						<p class="price">19,99 € / m.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						<a href="{{path('produit')}}" data-value="10" class="box">Je m'abonne</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="concept">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<h2>Comment ça marche ?</h2>
-					<img class="form-geometric" src="../images/Rectangle.png" alt="">
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-3 text-center">
 					<div class="card-icone">
 						<div class="card-icone-visuel">
-							<img src="../images/icon_selectinnez80x80.jpg" alt="">
+							<img src="images/icons/concept/icon_selectinnez80x80.jpg" alt="">
 							<h3>Sélectionnez</h3>
 							<h4>votre abonnement parmis 3 offres</h4>
 						</div>
+
 					</div>
+
 				</div>
-				<div class="col-3 text-center">
+				<div class="col-12 col-lg-3 text-center" id="flex-ccm">
 
 					<div class="card-icone">
 						<div class="card-icone-visuel">
-							<img src="../images/icon_louez83x69.svg" alt="">
+							<img src="images/icons/concept/icon_louez83x69.svg" alt="">
 							<h3>Louez</h3>
 							<h4>vos jeux parmis 600 référence.</h4>
 						</div>
-					</div>
-				</div>
-				<div class="col-3 text-center">
-					<div class="card-icone">
-						<div class="card-icone-visuel">
-							<img src="../images/icon_profitez60x60.png" alt="">
-							<h3>Profitez</h3>
-							<h4>pendant au moins 6 mois de vos jeux</h4>
-						</div>
+
 					</div>
 
 				</div>
-				<div class="col-3 text-center">
-					<div class="card-icone">
+				<div class="col-12 col-lg-3 text-center" id="flex-ccm">
+
+					<div class="card-icone" id="profiter">
 						<div class="card-icone-visuel">
-							<img src="../images/icon_recommander.svg" alt="">
+							<img src="images/icons/concept/icon_profitez60x60.png" alt="">
+							<h3>Profitez</h3>
+							<h4>pendant au moins 6 mois de vos jeux</h4>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="col-12 col-lg-3 text-center" id="flex-ccm">
+
+					<div class="card-icone" id="recommander">
+						<div class="card-icone-visuel">
+							<img src="images/icons/concept/icon_recommander.svg" alt="">
 							<h3>Recommandez</h3>
 							<h4>de nouveaux jeux et renvoyez vos anciens</h4>
 						</div>
+
 					</div>
+
 				</div>
+
 			</div>
 
 			<div class="row">
 				<button type="button" class="btn btn-primary col-3 mx-auto">Abonnement</button>
+
 			</div>
+
 		</div>
+
+
 	</section>
 
+	<!-- SECTION CATEGORIES -->
 	<section id="categories">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<h2>Catégories</h2>
-					<img class="form-geometric" src="../images/disque.png" alt="">
-				</div>
 
-				<div class="row text-center">
-					<div class="card-category col-3">
-						<div class="card-category-visuel background-category-eveil">
-							<img src="../images/vignettes/maison-brick.png" alt="">
-						</div>
-						<div class="card-category-body">
-							<h3>Jeux d'éveil</h3>
-						</div>
-					</div>
-					<div class="card-category col-3">
-						<div class="card-category-visuel background-category-societe">
-							<img src="../images/vignettes/maison-brick.png" alt="">
-						</div>
-						<div class="card-category-body">
-							<h3>Jeux de société</h3>
-						</div>
-					</div>
-					<div class="card-category col-3">
-						<div class="card-category-visuel background-category-construction">
-							<img src="../images/vignettes/maison-brick.png" alt="">
-						</div>
-						<div class="card-category-body">
-							<h3>Jeux de construction</h3>
-						</div>
-					</div>
-					<div class="card-category col-3">
-						<div class="card-category-visuel background-category-imitation">
-							<img src="../images/vignettes/maison-brick.png" alt="">
-						</div>
-						<div class="card-category-body">
-							<h3>Jeux d'imitation</h3>
-						</div>
-					</div>
-				</div>
+		<div id="carouselExampleIndicators" class="bb__carousel carousel slide" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
 			</div>
-		</div>
-	</section>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="container">
+						<div class="row">
+							<div class="col text-center">
+								<h2>Catégories</h2>
 
-	<section id="nouveautes">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<h2>Nouveautés</h2>
-					<img class="form-geometric" src="../images/carre.png" alt="">
-				</div>
+							</div>
 
-			</div>
-			<div class="row">
-				<div class="col-3">
-					<div class="card-product">
-						<div class="card-product-visuel">
-							<a class="tag-new" href="#">new</a>
-							<a class="bt-like" href="#"><img src="../images/icon_like.png" alt=""></a>
-							<img src="../images/vignettes/maison-brick.png" alt="">
-						</div>
-						<div class="card-product-body">
-							<h3>Nom de produit</h3>
-							<h4>Lorem ispum dolor sit amet</h4>
-							<a class="bt-plus" href="#"><img src="../images/icon_plus32x32.png" alt=""></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-3">
-					<div class="card-product">
-						<div class="card-product-visuel">
-							<a class="tag-new" href="#">new</a>
-							<a class="bt-like" href="#"><img src="../images/icon_like.png" alt=""></a>
-							<img src="../images/vignettes/maison-brick.png" alt="">
-						</div>
-						<div class="card-product-body">
-							<h3>Nom de produit</h3>
-							<h4>Lorem ispum dolor sit amet</h4>
-							<a class="bt-plus" href="#"><img src="../images/icon_plus32x32.png" alt=""></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-3">
-					<div class="card-product">
-						<div class="card-product-visuel">
-							<a class="tag-new" href="#">new</a>
-							<a class="bt-like" href="#"><img src="../images/icon_like.png" alt=""></a>
-							<img src="../images/vignettes/maison-brick.png" alt="">
-						</div>
-						<div class="card-product-body">
-							<h3>Nom de produit</h3>
-							<h4>Lorem ispum dolor sit amet</h4>
-							<a class="bt-plus" href="#"><img src="../images/icon_plus32x32.png" alt=""></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-3">
-					<div class="card-product">
-						<div class="card-product-visuel">
-							<a class="tag-new" href="#">new</a>
-							<a class="bt-like" href="#"><img src="../images/icon_like.png" alt=""></a>
-							<img src="../images/vignettes/maison-brick.png" alt="">
-						</div>
-						<div class="card-product-body">
-							<h3>Nom de produit</h3>
-							<h4>Lorem ispum dolor sit amet</h4>
-							<a class="bt-plus" href="#"><img src="../images/icon_plus32x32.png" alt=""></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+							<div class="row justify-content-center">
+								<div class="card-category col-5 col-lg-3">
+									<div class="card-category-visuel background-category-eveil">
+										<img src="images/vignettes/maison-brick.png" alt="">
+									</div>
+									<div class="card-category-body">
+										<h3>Jeux d'éveil</h3>
+									</div>
+								</div>
+								<div class="card-category col-5 col-lg-3">
+									<div class="card-category-visuel background-category-societe">
+										<img src="images/vignettes/maison-brick.png" alt="">
+									</div>
+									<div class="card-category-body">
+										<h3>Jeux de société</h3>
+									</div>
+								</div>
+								<div class="card-category col-5 col-lg-3">
+									<div class="card-category-visuel background-category-construction">
+										<img src="images/vignettes/maison-brick.png" alt="">
+									</div>
+									<div class="card-category-body">
+										<h3>Jeux de construction</h3>
+									</div>
+								</div>
+								<div class="card-category col-5 col-lg-3">
+									<div class="card-category-visuel background-category-imitation">
+										<img src="images/vignettes/maison-brick.png" alt="">
+									</div>
+									<div class="card-category-body">
+										<h3>Jeux d'imitation</h3>
+									</div>
+								</div>
 
-	<section id="nosvaleurs">
-		<div class="container container-xxl">
-			<div class="row">
-				<div class="col text-center">
-					<h2>Nos Valeurs</h2>
-					<img class="form-geometric" src="../images/triangle.png" alt="">
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-3">
-					<div class="card-photo text-center">
-						<div class="card-photo-visuel">
-							<img src="../images/img281x285_site_5.jpg" alt="">
-						</div>
-						<div class="card-photo-body">
-							<h3>Ludique et peédagogique</h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-3">
-					<div class="card-photo text-center">
-						<div class="card-photo-visuel">
-							<img src="../images/img281x285_site_9.jpg" alt="">
-						</div>
-						<div class="card-photo-body">
-							<h3>Eco-responsable</h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-3">
-					<div class="card-photo text-center">
-						<div class="card-photo-visuel">
-							<img src="../images/img281x285_site_8.jpg" alt="">
-						</div>
-						<div class="card-photo-body">
-							<h3>Emballage biodégradable</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+							</div>
 
-	<section id="dondejouet">
-		<div class="container container-xxl">
-			<div class="row">
-				<div class="col-4">
-					<img class="image-dondejouet" src="../images/image_don.jpg" alt="">
-				</div>
+						</div>
 
-				<div class="col-7 offset-xxl-1 text-center dondejouet-description">
-					<h2>Donner mes jouets</h2>
-					<div>
-						<p>Vos enfants ont grandi? Leurs jouets ne leur plaisent plus?
-							<br>
-							Déposez-les dans l'un de nos point relais!
-							<br><br>
-							Une fois recuillis, vos jouets seront triés,
-							<br>
-							réparé puis ils seront distribués dans nos box!
-							<br><br>
-							Tous les jouets qui ne peuvent pas être remis en état sont pris
-							<br>
-							en charge par ecosystem pour être dépollués et puis recyclés!
-							<br><br>
-							En faisant ce geste, vous participez à l’économie circulaire
-							<br>
-							et permettez d’éviter une surproduction de jouets,
-							<br>
-							très consommatrice en énergie !</p>
 					</div>
-					<button type="button" class="btn btn-primary">Faire un don</button>
-				</div>
-			</div>
-		</div>
-	</section>
 
-	<!-- JavaScript Bundle with Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-{% endblock %}
+				</section>
+
+				<!-- SECTION NOUVEAUTES -->
+				<section id="nouveautes">
+					<div class="container">
+						<div class="row">
+							<div class="col text-center">
+								<h2>Nouveautés</h2>
+
+							</div>
+
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-12 col-lg-3">
+
+								<div class="card-product">
+									<div class="card-product-visuel">
+										<a class="tag-new" href="#">new</a>
+										<a class="bt-like" href="#"><img src="images/icon_like-20x19.png" alt=""></a>
+										<img src="images/jouets/summer_card-kidzy281x285.jpg" alt="">
+									</div>
+									<div class="card-product-body">
+										<h3>Nom de produit</h3>
+										<h4>Lorem ispum dolor sit amet</h4>
+										<a class="bt-plus" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><img src="images/icons/icon_plus32x32.png" alt=""></a>
+									</div>
+								</div>
+
+							</div>
+							<div class="col-12 col-lg-3">
+
+								<div class="card-product">
+									<div class="card-product-visuel">
+										<a class="tag-new" href="#">new</a>
+										<a class="bt-like" href="#"><img src="images/icons/icon_like-20x19.png" alt=""></a>
+										<img src="images/jouets/rainbow_empilable-baby_cielo281x286.jpg" alt="">
+									</div>
+									<div class="card-product-body">
+										<h3>Nom de produit</h3>
+										<h4>Lorem ispum dolor sit amet</h4>
+										<a class="bt-plus" href="#"><img src="images/icons/icon_plus32x32.png" alt=""></a>
+									</div>
+								</div>
+
+							</div>
+							<div class="col-12 col-lg-3">
+
+								<div class="card-product">
+									<div class="card-product-visuel">
+										<a class="tag-new" href="#">new</a>
+										<a class="bt-like" href="#"><img src="images/icons/icon_like-20x19.png" alt=""></a>
+										<img src="images/vignettes/maison-brick.png" alt="">
+									</div>
+									<div class="card-product-body">
+										<h3>Nom de produit</h3>
+										<h4>Lorem ispum dolor sit amet</h4>
+										<a class="bt-plus" href="#"><img src="images/icons/icon_plus32x32.png" alt=""></a>
+									</div>
+								</div>
+
+							</div>
+							<div class="col-12 col-lg-3">
+
+								<div class="card-product">
+									<div class="card-product-visuel">
+										<a class="tag-new" href="#">new</a>
+										<a class="bt-like" href="#"><img src="images/icons/icon_like-20x19.png" alt=""></a>
+										<img src="images/jouets/tout-petit_montessorie-Nathan281x285.jpg" alt="">
+									</div>
+									<div class="card-product-body">
+										<h3>Nom de produit</h3>
+										<h4>Lorem ispum dolor sit amet</h4>
+										<a class="bt-plus" href="#"><img src="images/icons/icon_plus32x32.png" alt=""></a>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</section>
+
+				<!-- SECTION NOS VALEURS -->
+				<section id="nosvaleurs">
+					<div class="container container-xxl">
+						<div class="row">
+							<div class="col text-center">
+								<h2>Nos Valeurs</h2>
+
+							</div>
+
+						</div>
+
+						<div class="row justify-content-center">
+							<div class="col-12 col-lg-3">
+
+								<div class="card-photo text-center">
+									<div class="card-photo-visuel">
+										<img src="images/valeurs/ludique_et_pedagogique281x285.jpg" alt="">
+									</div>
+									<div class="card-photo-body">
+										<h3>Ludique et pédagogique</h3>
+									</div>
+								</div>
+
+							</div>
+							<div class="col-12 col-lg-3">
+
+								<div class="card-photo text-center">
+									<div class="card-photo-visuel">
+										<img src="images/valeurs/eco-responsable-282x285.jpg" alt="">
+									</div>
+									<div class="card-photo-body">
+										<h3>Eco-responsable</h3>
+									</div>
+								</div>
+
+							</div>
+							<div class="col-12 col-lg-3">
+
+								<div class="card-photo text-center">
+									<div class="card-photo-visuel">
+										<img src="images/valeurs/emballage_biodegradable-281x285.jpg" alt="">
+									</div>
+									<div class="card-photo-body">
+										<h3>Emballage biodégradable</h3>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+				</section>
+
+				<!-- SECTION DON DE JOUET -->
+				<section id="dondejouet">
+					<div class="container container-xxl">
+						<div class="row">
+							<div class="col-lg-4 text-center">
+								<img class="image-dondejouet img-fluid" src="images/don-383x383.jpg" alt="">
+							</div>
+
+							<div class="dondejouet-description col-lg-7 offset-xxl-1 text-start">
+								<h2>Donner mes jouets</h2>
+								<div>
+									<p>
+										Vos enfants ont grandi&nbsp;? Leurs jouets ne leur plaisent plus&nbsp;?<br>
+										Déposez-les dans l'un de nos point relais&nbsp;!
+									</p>
+
+									<p>
+										Une fois recuillis, vos jouets seront triés, réparé puis ils seront distribués dans nos box&nbsp;!
+									</p>
+
+									<p>
+										Tous les jouets qui ne peuvent pas être remis en état sont pris en charge par ecosystem pour être dépollués et puis recyclés&nbsp;!
+									</p>
+
+									<p>
+										En faisant ce geste, vous participez à l’économie circulaire et permettez d’éviter une surproduction de jouets, très consommatrice en énergie&nbsp;!</p>
+								</p>
+							</div>
+							<div class="d-grid col-8 mx-auto">
+								<button type="button" class="btn btn-primary">Faire un don</button>
+							</div>
+						</div>
+
+					</div>
+
+
+				</div>
+			</section>
+
+
+			<!-- SECTION TEMOIGNAGES -->
+			<section id="temoignages">
+				<div class="container" id="blocavis">
+					<div class="row">
+
+						<div class="col-md-3">
+
+							<div class="card h-100">
+
+								<img src="images/photo_temoignages/pp_edna.jpg" class="card-img-top" alt="...">
+
+								<div class="card-body text-center">
+									<div class="">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles-half.png" class="card-img-middletop" alt="...">
+									</div>
+									<p class="card-text">"Merci pour ce concept<br>qui a tout son sens&nbsp;!<br>
+										J'adore&nbsp;!"</p>
+									<h6 class="card-title">
+										Edna Louis</h6>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-md-3">
+
+							<div class="card h-100">
+
+								<img src="images/photo_temoignages/pp_edna.jpg" class="card-img-top" alt="...">
+
+								<div class="card-body text-center">
+									<div class="">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles-half.png" class="card-img-middletop" alt="...">
+									</div>
+									<p class="card-text">"Merci pour ce concept<br>qui a tout son sens&nbsp;!<br>
+										J'adore&nbsp;!"</p>
+									<h6 class="card-title">
+										Edna Louis</h6>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-md-3">
+
+							<div class="card h-100">
+
+								<img src="images/photo_temoignages/pp_edna.jpg" class="card-img-top" alt="...">
+
+								<div class="card-body text-center">
+									<div class="">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles-half.png" class="card-img-middletop" alt="...">
+									</div>
+									<p class="card-text">"Merci pour ce concept<br>qui a tout son sens&nbsp;!<br>
+										J'adore&nbsp;!"</p>
+									<h6 class="card-title">
+										Edna Louis</h6>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-md-3">
+
+							<div class="card h-100">
+
+								<img src="images/photo_temoignages/pp_edna.jpg" class="card-img-top" alt="...">
+
+								<div class="card-body text-center">
+									<div class="">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles.png" class="card-img-middletop" alt="...">
+										<img src="images/icons/icon_etoiles-half.png" class="card-img-middletop" alt="...">
+									</div>
+									<p class="card-text">"Merci pour ce concept<br>qui a tout son sens&nbsp;!<br>
+										J'adore&nbsp;!"</p>
+									<h6 class="card-title">
+										Edna Louis</h6>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</section>
+
+
+				<!-- JavaScript Bundle with Popper -->
+				<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+				<script>
+					var myCarousel = document.querySelector('#carouselExampleIndicators');
+
+var carousel = new bootstrap.Carousel(myCarousel, {
+interval: false,
+wrap: false
+})
+				</script>
+			</body>
+		{% endblock %}

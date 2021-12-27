@@ -1,0 +1,28 @@
+html
+{
+font-family: 'Poppins', sans-serif;
+}
+/*
+Carousel
+*/
+.bb__carousel {
+    height: 693px;
+    margin-top: 35px;
+}
+
+
+.bb__carousel .carousel-item .card-header {
+    max-width: 1374px;
+    margin: 0 auto;
+}
+
+.bb__carousel .carousel-indicators [data-bs-target]{
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+
+}
+
+.bb__carousel .carousel-indicators button{
+    background-color: #DA7F57;
+}
