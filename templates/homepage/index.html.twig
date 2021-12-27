@@ -24,13 +24,6 @@
 		}
 	</style>
 
-	<div class="example-wrapper">
-		<h1>Hello choose your box</h1>
-
-		<a data-href="{{path('produit')}}" data-value="4" class="box">Box 4 produits</a>
-		<a data-href="{{path('produit')}}" data-value="7" class="box">Box 7 produits</a>
-		<a data-href="{{path('produit')}}" data-value="10" class="box">Box 10 produits</a>
-	</div>
 
 	<div class="example-wrapper">
 		<h1>Categories</h1>
@@ -45,7 +38,8 @@
 		<h1>Nouveautés</h1>
 		{% for produit in produitList %}
 
-			<h3>{{produit.nom}}</h3>
+			<h3><img src="/uploads/{{produit.photo}}"></h3>
+			
 
 		{% endfor %}
 	</div>
@@ -104,34 +98,110 @@
 					</nav>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-12 annonce">
-					<span>
-						Bénéficiez de -10% sur nos boxs avec le code
-						<span id="noel">NOEL21</span>
-					</span>
-				</div>
-			</div>
-			<div class="row fond-card-header justify-content-center">
-				<div class="col-10 card-header">
-					<div class="container">
-						<div class="row justify-content-center">
-							<div class="col-5 text-center">
-								<img class="logo-header" src="images/logo_bric_et_broc_570x88.svg" alt="">
-								<span class="tag-action">Louez des jouets</span>
-								<p class="tag-line">Pour le plus grand bonheur de vos enfants&nbsp;!</p>
-								<button type="button" class="btn btn-primary col-4 mx-auto">Abonnement</button>
-							</div>
+		</div>
+	</header>
 
-							<div class="col-5 offset-2 text-center">
-								<img class="logo-header" src="images/img_fond_B.png" alt="">
-							</div>
+	<section id="carousel1">
+		<div class="row">
+			<div class="col-12 annonce">
+			<span>
+				Bénéficiez de -10% sur nos boxs avec le code <span id= noel>NOEL21</span>
+			</span>
+		</div>
+		</div>
+
+  <div class="fond-card-header">
+    <div id="carouselExampleIndicators" class="bb__carousel carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="card-header">
+              <div class="container">
+                  <div class="row justify-content-center">
+                      <div class="col-6 text-center">
+                          <img class="logo-header" src="images/logo/logo_bric_et_broc-588x110.svg" alt="">
+                          <span class="tag-action tag-louez">Louez des jouets</span>
+                          <p class="tag-line">Pour le bonheur de vos enfants&nbsp;!</p>
+                          <button type="button" class="btn btn-primary col-12 col-xl-4 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Abonnement</button>
+                      </div>
+                      <div class="col-6 text-center">
+                        <img src="../images/header1-396x504.png" width="399" class="d-block" alt="...">
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+		
+		<div class="carousel-item">
+			<div class="card-header">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-6 text-center">
+							<img class="logo-header" src="images/logo/logo_bric_et_broc-588x110.svg" alt="">
+							<span class="tag-action tag-libérez">Libérez sa créativité</span>
+							<p class="tag-line">Emballages 100% ludiques</p>
+							<button type="button" class="btn btn-primary col-12 col-xl-4 mx-auto"  data-bs-toggle="modal" data-bs-target="#exampleModal">Abonnement</button>
+						</div>
+						<div class="col-6 text-center">
+						<img src="../images/header2-570x606.png" width="379" class="d-block w-100" alt="...">
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</header>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card-header">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-6 text-center">
+                        <img class="logo-header" src="images/logo/logo_bric_et_broc-588x110.svg" alt="">
+                        <span class="tag-action tag-plaisir">Faites leurs plaisir</span>
+                        <p class="tag-line">Achetez moins mes jouez mieux&nbsp;!</p>
+                        <button type="button" class="btn btn-primary col-12 col-xl-4 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Abonnement</button>
+                    </div>
+                    <div class="col-6">
+                      <img src="../images/header3-531x558.png" width="379" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card-header">
+				<div class="container">
+						<div class="row justify-content-center">
+								<div class="col-6 text-center">
+									<img class="logo-header" src="images/logo/logo_bric_et_broc-588x110.svg" alt="">
+									<span class="tag-action tag-jouets">Plus de 600 jouets</span>
+									<p class="tag-line">Découvrez nos nouveautés&nbsp;!</p>
+									<button type="button" class="btn btn-primary col-12 col-xl-4 mx-auto"  data-bs-toggle="modal" data-bs-target="#exampleModal">Abonnement</button>
+								</div>
+								<div class="col-6 text-center"> 
+									<img src="../images/header4-517x561.png" width="379" class="d-block w-100" alt="...">
+								</div>
+						</div>
+					</div>
+        		</div>
+        	</div>
+      	</div>
+
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+    </div>
+	</section>
 
 	<section id="nos-box">
 		<div class="container container-xxl">
@@ -177,6 +247,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</section>
 
 	<section id="concept">
@@ -288,8 +359,12 @@
 					<h2>Nouveautés</h2>
 					<img class="form-geometric" src="../images/carre.png" alt="">
 				</div>
-
 			</div>
+
+			
+						
+
+
 			<div class="row">
 				<div class="col-3">
 					<div class="card-product">
