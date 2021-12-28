@@ -35,9 +35,6 @@ function ajoutPanier() {
       window.confirm('Vous ne pouvez plus ajouter de produit. Vôtre box est complète!!');
       document.location.href = 'cart';
     }
-
-
-
   }
 }
 
