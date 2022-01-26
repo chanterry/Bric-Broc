@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 import Recherche from "./Recherche";
 
@@ -6,6 +6,8 @@ import '../styles/app.css';
 
 const Toys = () => {
 
+    const myRef = useRef ();
+    const [loading, setLoading] = useState (true);
     const [data, setData] = useState([]);
     const [searchToy, setSearchToy] = useState("");
     let url = '/produit_bdd/' + searchToy;
@@ -13,13 +15,13 @@ const Toys = () => {
 
     useEffect(() => {
         if (searchToy.length > 0) {
+            setLoading(true);
             fetch(url)
                 .then(response => response.json())
                 .then(json => setData(json));
-        }
+                setLoading(false);
+        } 
     }, [searchToy]);
-
-    console.log(searchToy)
 
     let redirection = function redirection(e) {
         let produitID = e.currentTarget.dataset.key;
@@ -28,11 +30,11 @@ const Toys = () => {
 
     return (
         <>
-            <div>
+            
                 <Recherche
                     searchToy={searchToy}
                     setSearchToy={setSearchToy} />
-            </div>
+            
 
             <div className="searchResult" >
                 {data.map((item) => {

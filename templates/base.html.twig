@@ -105,12 +105,15 @@
 							<a class="navbar-brand" href="login">
 								<img src="../images/icon_mon_compte_20x18.svg" alt="" width="24" height="24">
 							</a>
+
 							<div class="navbar-brand">
 								<img id="icon_search" src="../images/icon_search_17x17.svg" alt="" width="24" height="24">
 							</div>
+
 							<a class="navbar-brand" href="cart">
 								<img src="../images/icon_panier_16x18.svg" alt="" width="24" height="24">
 							</a>
+							
 							<div id="root" class="searchBar" style="display:none;"></div>
 
 						</div>
@@ -236,6 +239,7 @@ wrap: false
 		{% endblock %}
 		<script src="./js/main.js"></script>
 		{% block javascripts %}{% endblock %}
+		
 		{{ encore_entry_script_tags('app') }}
 	</body>
 </html>

@@ -15,7 +15,6 @@ const Recherche = (props) => {
                 searchToy={searchToy} 
                 onChange={handleSearchToy}
             />
-
         </>
     )
 }
